@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1757447145.14431 "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" "min.pdf" "min" 1757447145.41421 0
-  "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" 1757447144.96138 2852 2f9a0922e47720529d3c29048f7cecfb ""
+["pdflatex"] 1757447421.30251 "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" "min.pdf" "min" 1757447421.53694 0
+  "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" 1757447414.97607 2852 2f9a0922e47720529d3c29048f7cecfb ""
   "/Users/sam/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1753222609.728 11524 b7d6926972ff44a1c49ad11c37fee7cb ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -77,10 +77,10 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753237222 79187 04b17f8738f833a5a5f7867124477b59 ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1753237276 2935151 b6283a843d928ad79ee416b98075a609 ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "code/script.py" 1757446614.91011 373 8de604df5ce40e6759bdeb5edd1dfad7 ""
+  "code/script.py" 1757447420.87306 372 4ded1922d8fb19cb3da3f33ad7c39b1b ""
   "graph.png" 1757444388.56676 22192 14a738b82bf83c9c7caacb0dac67f44e ""
-  "min.aux" 1757447145.36541 124 0a4eadfe31640240cab1b9159dc4125c "pdflatex"
-  "min.tex" 1757447144.96138 2852 2f9a0922e47720529d3c29048f7cecfb ""
+  "min.aux" 1757447421.49839 124 0a4eadfe31640240cab1b9159dc4125c "pdflatex"
+  "min.tex" 1757447414.97607 2852 2f9a0922e47720529d3c29048f7cecfb ""
   (generated)
   "min.aux"
   "min.log"
