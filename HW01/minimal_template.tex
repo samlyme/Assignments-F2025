@@ -154,4 +154,63 @@
         is easiest to remember, and imo still reasonably readable.
     }
 \end{enumerate}
+
+\section*{[5 pts] Choice Exercise 5.}
+
+\begin{enumerate}
+    \item {
+        Compute an integral to show that when \(z=1\), \(\Gamma(1) = 0!\).
+        \[\Gamma(1) = \int_0^\infty{t^{1-1}e^{-t}} dt = \int_0^\infty{e^{-t}} dt = 1 = 0!\]
+    }
+
+    \item {
+        Compute an integral to show that when \(z=2\), \(\Gamma(2)=1!\).
+        \[\Gamma(2) = \int_0^\infty{te^{-t}} dt\]
+        \[ = \left (-t^2 e^{-t}) \right|_0^\infty + \int_{0}^{\infty}{t e^{-t}} dt\]
+        \[ = 0 + 1 = 1!\]
+    }
+
+    \item {
+        Compute an integral to show that when \(z=3\), \(\Gamma(3)=2!\).
+
+        \[ \Gamma(3) = \int_0^\infty{t^2e^{-t}} dt\]
+        \[ = \left (-t^2e^{-t}) \right|_0^\infty + 2\int_{0}^{\infty}{te^{-t}} dt\]
+        \[ = 0 + 2 = 2!\]
+    }
+
+    \item {
+        Prove that when \(z \ge 1\) is an integer, \(\Gamma(z) = (z-1)\Gamma(z-1)\).
+
+        \begin{proof}
+            We actually found it easier to say that \(\Gamma(k+1) = k\Gamma(k)\) for
+            some integer \(k \ge 1\). Theses two statements are equivalent.
+
+            First, we define \(\Gamma(k)\):
+            \[ \Gamma(k) = \int_{0}^{\infty}{t^{k-1}e^{-t}} dt\]
+
+            Then, we define \(\Gamma(k+1)\):
+            \[ \Gamma(k+1) = \int_{0}^{\infty}{t^ke^{-t}} dt\]
+            \[ = \left (-t^ke^{-t}) \right|_0^\infty + \int_{0}^{\infty}{kt^{k-1}e^{-t}} dt\]
+            \[ = 0 + k \int_{0}^{\infty}{t^{k-1}e^{-t}} dt\]
+
+            Thus,
+            \[ \Gamma(k+1) = k \int_{0}^{\infty}{t^{k-1}e^{-t}} dt = k\Gamma(k)\]
+        \end{proof}
+    }
+
+    \item {
+        Why can you conclude that \(\Gamma(z) = (z-1)!\) for all integers \(z \ge 1\)?
+
+        We are able to conclude that \(\Gamma(z) = (z-1)!\) for all integers \(z \ge 1\)
+        because we have actually proved this statement via induction.
+
+        We have shown that for any integer \(k \ge 1\), if \(\Gamma(k) = (k-1)!\)
+        then \(\Gamma(k+1) = k!\).
+
+        We have also shown a few base cases for which the statement \(\Gamma(n) = (n-1)!\),
+        namely for \(n = 1, 2, 3\).
+
+        Thus, through induction, we have proved that \(\Gamma(z) = (z-1)!\) for all integers \(z \ge 1\).
+    }
+\end{enumerate}
 \end{document}
