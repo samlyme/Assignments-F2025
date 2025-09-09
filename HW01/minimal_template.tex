@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amsfonts, amsthm}
+
+\title{HW 0}
+\author{Sam Ly}
+
+\begin{document}
+\maketitle
+
+\section*{[4 pts] Required Exercise 2.}
+
+\begin{enumerate}
+    \item {
+        If the two numbers \(a_1\) and \(a_2\) are odd numbers,
+        then their product \(a_1 \times a_2\) is an odd number.
+
+        \begin{proof}
+            By definition, \(a_1 = 2n_1 + 1\) and \(a_2 = 2n_2 + 1\).
+
+            Then, 
+            \[ a_1 \times a_2 = (2n_1 + 1) \times (2n_2 + 1)\]
+            \[ = 4n_1n_2 + 2n_1 + 2n_2 + 1\]
+            \[ = 2(2n_1n_2 + n_1 + n_2) + 1 \]
+
+            Thus, since we can write \(a_1 \times a_2 \) in the form \(2k + 1 \) for some
+            integer \(k\), we prove that \(a_1 \times a_2 \) is odd.
+        \end{proof}
+    }
+
+    \item {
+        2. If three numbers $a_1$, $a_2$, and $a_3$ are odd numbers, then their product 
+        \(a_1 \times a_2 \times a_3 \) is an odd number.
+
+        \begin{proof}
+            From the previous proof, we can substitute \(a_1 \times a_2 \) for 
+            some odd integer \(x\).
+
+            Now we have \(x \times a_3\), where both \(x\) and \(a_3\) are odd.
+            Again, using the previous proof, we know \(x \times a_3\).
+
+            Thus, \(a_1 \times a_2 \times a_3 \) is odd.
+        \end{proof}
+    }
+
+    \item {
+        If the four numbers \(a_1, a_2, ..., a_4 \)
+        are odd numbers, then their product \(a_1 \times a_2 \times ... \times a_4\)
+        is an odd number.
+
+        \begin{proof}
+            Using the first proof, we know \(a_1 \times a_2 \)  and \(a_3 \times a_4\) 
+            are both odd.
+
+            Thus, \((a_1 \times a_2) \times (a_3 \times a_4)\) is odd.
+
+            By the associative property of multiplication,
+            \[a_1 \times a_2 \times ... \times a_4 = (a_1 \times a_2) \times (a_3 \times a_4), \]
+            and therefore \(a_1 \times a_2 \times ... \times a_4 \) is odd.
+        \end{proof}
+    }
+
+    \item {
+        If the 50 numbers \(a_1, a_2, ..., a_50 \)
+        are odd numbers, then their product \(a_1 \times a_2 \times ... \times a_50\)
+        is an odd number.
+
+        \begin{proof}
+            Using our first proof, we define our base case as "the product of
+            two odd integers is odd".
+
+            Let \(S_k\) be the sequence of integers \(a_1, a_2, ..., a_k\), 
+            where \(a_i\) is odd for any integer \(i\).
+            
+            We assume that for \(S_k = a_1, a_2, ..., a_k\), the product 
+            \(\prod{S_k} = a_1 \times a_2 \times ... \times a_k\) is odd.
+
+            Let \(a_{k+1}\) be an odd integer.
+
+            Then, the product of the sequence \(S_{k+1} = a_1, a_2, ..., a_k, a_{k+1}\)
+            can be written as \(\prod{S_{k+1}} = \prod{S_k} \times a_{k+1} \).
+
+            Since the product of two odd numbers is odd, and \(\prod{S_k}\) and \(a_{k+1}\) 
+            are both odd, the product of the two is also odd. 
+
+            Therefore, by induction, the product of any number of odd numbers will 
+            always be odd. Thus, the product of \(50\) odd numbers is odd.
+        \end{proof}
+    }
+\end{enumerate}
+
+\section*{[2 pts] Required Exercise 3.}
+
+3. Give a hint about one of the problems on the homework.
+
+\section*{[5 pts] Choice Exercise 4.}
+
+\begin{enumerate}
+    \item \(S = \{1, 2, 3\}\)
+
+    \item {
+        First way:
+        \[\{n \in \mathbb{N} | \log(n) > 5 \} \]
+
+        Second way:
+        \[\{n \in \mathbb{N} \mid \log(n) > 5 \}\]
+
+        The main difference is that the use of the pipe symbol causes the rendering
+        to look funky, since the bar is too close to the "N". Using the "mid" command 
+        renders the bar with nicer spacing.
+    }
+
+    \item {
+        With:
+        \[ \left( \int e^x dx \right) \]
+
+        Without:
+        \[ (\int e^x dx) \]
+
+        Not using the left and right descriptors causes the parens to not "cover"
+        the entire height of the expression.
+    }
+
+    \item {
+        \[\{n \in \mathbb{N} \mid n is even \}\]
+        \[\{n \in \mathbb{N} \mid n \text{is even} \}\]
+        \[\{n \in \mathbb{N} \mid n \text{ is even} \}\]
+
+        The first option is not what we intend, since all letters in "is even"
+        are treated as independent variable names, and gets rendered as such. 
+
+        The second option is better, since "is even" is rendered properly, but 
+        we are missing a space in the front of "is even", so the rendered text
+        gets squished. 
+
+        The third option is best and is likely what we intended to write.
+    }
+
+    \item {
+        \[\big(\underbrace{1,1,\dots,1}_{k\text{ times}}\big)\]
+        \[\left(\underbrace{1,1,\dots,1}_{k\text{ times}}\right)\]
+        \[\underbrace{\left(1,1,\dots,1\right)}_{k\text{ times}}\]
+
+        When compared to the first, the second option makes the parens
+        look funny because they really don't need to be that tall. 
+
+        The third option looks fine, but the underbrace extending past 
+        the parens may have some weird "semantics".
+
+        I would prefer to read the first option because it is (imo)
+        sematntically correct, since we have \(k\) elements inside of
+        the tuple. But writing it could be a bit cumbersome as we need to
+        use the "big" command explicitly. When writting, the third option 
+        is easiest to remember, and imo still reasonably readable.
+    }
+\end{enumerate}
+\end{document}
