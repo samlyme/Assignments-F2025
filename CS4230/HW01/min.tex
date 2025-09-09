@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amsfonts, amsthm, graphicx}
+\graphicspath{{figures/}{./}}
+
+\title{Title}
+\author{Sam Ly}
+
+\begin{document}
+\maketitle
+
+\section*{Q1 (5 pts)}
+
+\begin{enumerate}
+    \item {
+        Draw the graph.
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.4\textwidth]{graph.png}
+        \end{figure}
+    }
+
+    \item {
+        Compute the degree of each node.
+
+        \[ \text{deg}(A) = 2 \]
+        \[ \text{deg}(B) = 3 \]
+        \[ \text{deg}(C) = 2 \]
+        \[ \text{deg}(D) = 2 \]
+        \[ \text{deg}(E) = 1 \]
+    }
+
+    \item {
+        Verify the \textbf{Handshake Theorem}.
+
+        \[\sum_{v \in V}{\text{deg}(v)} = 2 |E| \]
+
+        \[2+3+2+2+1 = 10 = 2 |E| \]
+    }
+
+    \item {
+        Explain briefly why this must always hold for undirected graphs.
+
+        This must always hold true for undirected graphs because each edge
+        always connects two nodes. This means those two nodes increase their
+        degree by one when connected by one edge. By extension, each edge 
+        increases the sum of all node degrees. 
+
+        Therefore, the sum of all degrees of nodes is equal to two times the 
+        number of edges.
+    }
+\end{enumerate}
+
+\end{document}
