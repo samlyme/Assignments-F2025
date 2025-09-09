@@ -1,10 +1,36 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{mathtools, amsfonts, amsthm, graphicx}
-\graphicspath{{figures/}{./}}
+\usepackage{mathtools, amsfonts, amsthm, graphicx, listings, xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \title{Title}
 \author{Sam Ly}
+
 
 \begin{document}
 \maketitle
@@ -48,6 +74,36 @@
 
         Therefore, the sum of all degrees of nodes is equal to two times the 
         number of edges.
+    }
+\end{enumerate}
+
+\section*{Q2 (5 pts)}
+
+\begin{enumerate}
+    \item {
+        Write down the \textbf{degree distribution}: how many nodes have degree 1, 2, 3, etc.
+
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{ll}
+                Degree & No. of Nodes \\
+                1 & 1 \\
+                2 & 3 \\
+                3 & 1 \\
+
+            \end{tabular}
+        \end{table}
+    }
+
+    \item {
+        Write a short \textbf{Python snippet} that:
+        \begin{itemize}
+            \item Stores the graph as a dictionary of neighbors.
+            \item Loops over nodes to compute degrees.
+            \item Prints the degree distribution.
+        \end{itemize}
+
+        \lstinputlisting[language=Python]{./code/script.py}        
     }
 \end{enumerate}
 
