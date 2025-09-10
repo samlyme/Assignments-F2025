@@ -139,6 +139,11 @@ INPUT ./bar.png
 INPUT ./bar.png
 INPUT ./bar.png
 INPUT ./bar.png
+INPUT ./graph_no_DE.png
+INPUT ./graph_no_DE.png
+INPUT ./graph_no_DE.png
+INPUT ./graph_no_DE.png
+INPUT ./graph_no_DE.png
 INPUT min.aux
 INPUT /Users/sam/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb

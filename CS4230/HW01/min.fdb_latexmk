@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1757459966.11629 "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" "min.pdf" "min" 1757459966.37237 0
-  "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" 1757453589.52112 3126 f3ff945a2f51513ca20cbd5d6a6fe754 ""
+["pdflatex"] 1757526495.63831 "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" "min.pdf" "min" 1757526495.96514 0
+  "/Users/sam/Documents/Assignments/CS4230/HW01/min.tex" 1757526495.40217 4161 bf2c935eaf616e3b815822514b5ef426 ""
   "/Users/sam/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1753222609.728 11524 b7d6926972ff44a1c49ad11c37fee7cb ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -80,8 +80,9 @@
   "bar.png" 1757459965.66389 10663 1da20086f6797f469d3648fb6d2e938d ""
   "code/main.py" 1757459964.17684 870 f71134577fbe3555c5d9ad022c0be4b8 ""
   "graph.png" 1757448757.47131 22192 14a738b82bf83c9c7caacb0dac67f44e ""
-  "min.aux" 1757459966.33336 122 92873f65ed1c57d4497dccd34fe13615 "pdflatex"
-  "min.tex" 1757453589.52112 3126 f3ff945a2f51513ca20cbd5d6a6fe754 ""
+  "graph_no_DE.png" 1757526067.73091 22788 8613f1568a99eb96f8d8868112a89f9d ""
+  "min.aux" 1757526495.91423 122 20db02fd28ac848f70a6e96a307929fb "pdflatex"
+  "min.tex" 1757526495.40217 4161 bf2c935eaf616e3b815822514b5ef426 ""
   (generated)
   "min.aux"
   "min.log"
