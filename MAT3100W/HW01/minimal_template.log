@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  9 SEP 2025 00:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.22)  10 SEP 2025 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/sam/Documents/MAT3100W/HW01/minimal_template.tex
-(/Users/sam/Documents/MAT3100W/HW01/minimal_template.tex
+**/Users/sam/Documents/Assignments/MAT3100W/HW01/minimal_template.tex
+(/Users/sam/Documents/Assignments/MAT3100W/HW01/minimal_template.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/article.cls
@@ -269,14 +269,14 @@ L3 programming layer <2025-07-19>
  ) 
 Here is how much of TeX's memory you used:
  3413 strings out of 469288
- 54018 string characters out of 5467561
+ 54054 string characters out of 5467561
  469768 words of memory out of 5000000
  31800 multiletter control sequences out of 15000+600000
  635062 words of font info for 72 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 70i,9n,79p,284b,222s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,9n,79p,296b,222s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/sam/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on minimal_template.pdf (4 pages, 142251 bytes).
+Output written on minimal_template.pdf (4 pages, 142108 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream

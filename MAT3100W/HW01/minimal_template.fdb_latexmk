@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1757401859.06119 "/Users/sam/Documents/MAT3100W/HW01/minimal_template.tex" "minimal_template.pdf" "minimal_template" 1757401859.23186 0
-  "/Users/sam/Documents/MAT3100W/HW01/minimal_template.tex" 1757401858.899 7753 fa8ac2f6c71e8f3395d6152665564a0f ""
+["pdflatex"] 1757539172.03212 "/Users/sam/Documents/Assignments/MAT3100W/HW01/minimal_template.tex" "minimal_template.pdf" "minimal_template" 1757539172.24917 0
+  "/Users/sam/Documents/Assignments/MAT3100W/HW01/minimal_template.tex" 1757539171.77838 7750 31d47721515dc24f20525ef6bad5820a ""
   "/Users/sam/Library/texlive/2025basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1753222609.728 11524 b7d6926972ff44a1c49ad11c37fee7cb ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -69,8 +69,8 @@
   "/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753237222 79187 04b17f8738f833a5a5f7867124477b59 ""
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1753237276 2935151 b6283a843d928ad79ee416b98075a609 ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
-  "minimal_template.aux" 1757401859.19084 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
-  "minimal_template.tex" 1757401858.899 7753 fa8ac2f6c71e8f3395d6152665564a0f ""
+  "minimal_template.aux" 1757539172.19689 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "minimal_template.tex" 1757539171.77838 7750 31d47721515dc24f20525ef6bad5820a ""
   (generated)
   "minimal_template.aux"
   "minimal_template.log"
