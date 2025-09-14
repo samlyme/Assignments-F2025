@@ -28,7 +28,7 @@
 
 \lstset{style=mystyle}
 
-\title{Title}
+\title{HW01 Graphs and Social Networks}
 \author{Sam Ly}
 
 
@@ -148,6 +148,45 @@
         \textbf{D-E} is a bridge because it is the only edge that connects node 
         \textbf{E} to the rest of the graph, thus removing it makes node \textbf{E}
         a new component.
+    }
+\end{enumerate}
+
+\section*{Q4 (5 pts)}
+
+Consider this undirected graph:
+\\Nodes = \(\{P, Q, R, S, T\}\)
+\\Edges = \( \{ P-Q, Q-R, Q-S, R-T \} \)
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{graph_2.png}
+\end{figure}
+
+\begin{enumerate}
+    \item {
+        Which node has the highest \textbf{degree centrality}?
+
+        Node \(Q\) has the highest degree centrality because it has the
+        most edges connected to it, meaning it has the highest degree.
+    }
+
+    \item {
+        Which node likely has the highest \textbf{betweenness centrality}? 
+        Explain briefly.
+
+        Node \(Q\) has the highest \textbf{betweenness centrality} because it is 
+        on the most shortest paths. 
+
+
+        \lstinputlisting[language=Python, firstline=1, lastline=48]{./code/script.py}        
+    }
+
+    \item {
+        Which node is closest to all others (high \textbf{closeness centrality})? Explain briefly.
+
+        Node \(Q\) has the highest \textbf{closeness centrality} because it has
+        the lowest "total distance" from the other nodes.
+        \lstinputlisting[language=Python, firstline=50]{./code/script.py}        
     }
 \end{enumerate}
 
