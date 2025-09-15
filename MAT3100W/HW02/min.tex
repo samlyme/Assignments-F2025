@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amsfonts, amsthm, graphicx, listings, xcolor}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Title}
+\author{Sam Ly}
+
+\begin{document}
+\maketitle
+
+\section*{[3 pts] Required Exercise 1.}
+
+Done.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/prompt.png}
+\end{figure}
+
+\section*{[3 pts] Required Exercise 2.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/hank.jpeg}
+    \caption{Do I look like I know what a JPEG is?}
+\end{figure}
+
+Try the following settings for [width=...], and discuss what they do: 
+
+\begin{enumerate}
+    \item {
+        \begin{verbatim}
+            [width=2cm]
+        \end{verbatim}
+
+        This makes the figure very small, like a thumbnail. The
+        sizing is abosulte w.r.t the literal page size.
+    }
+    \item {
+        \begin{verbatim}
+            [width=5cm]
+        \end{verbatim}
+        
+        A bit bigger than the previous, but is still absolute sizing.
+    }
+    \item {
+        \begin{verbatim}
+            [width=0.5\textwidth]
+        \end{verbatim}
+
+        This size fills a good amount of the page without being overly 
+        intrusive. I usually like using this.
+    }
+
+    \item {
+        \begin{verbatim}
+            [width=\linewidth]
+        \end{verbatim}
+
+        Seems to do the same as "textwidth". Internet says it has to do with 
+        pages with multiple columns.
+    }
+\end{enumerate}
+
+\section*{[4 pts] Required Exercise 3.}
+
+\section*{[2 + 2 + 3 + 3 + 2] Choice Exercise 4.}
+
+\begin{enumerate}
+    \item {
+        Prove that given 5¢ coins and 6¢ coins, you can make change for any 
+        amount of money that is 20¢ or more.
+
+        \begin{proof}
+            We begin by defining "being able to make change from 5¢ and 6¢ coins"
+            as:
+            \[n = 5a + 6b\]
+            
+            Now, we see that we can make change of \(n\)¢ if we can write \(n\)
+            as \(5a + 6b\). 
+
+            For the base cases \(20 \le n \le 24\), we have:
+            \begin{itemize}
+                \item \(20 = 5(4) + 6(0)\)
+                \item \(21 = 5(3) + 6(1)\) 
+                \item \(22 = 5(2) + 6(2)\) 
+                \item \(23 = 5(1) + 6(3)\) 
+                \item \(24 = 5(0) + 6(4)\)  
+            \end{itemize}
+
+            Now we make the inductive hypothesis that we \textit{can} make 
+            change of any value \(n = k\) such that \(k \ge 20\).
+
+            If this is true, we can also make change for \(n = k + 1\), because 
+            \(k + 1 = k - 4 + 5\).
+
+            Therefore, we can make change for any amount of money that is 20¢ or 
+            more using only 5¢ and 6¢ coins.
+        \end{proof}
+    }
+
+    \item {
+        Prove that \(9^n + 5^n - 2\) is divisible by 4 for all integers \(n \ge 1\). 
+
+        \begin{proof}
+            An integer \(m\) is divisible by 4 if it can be written in the form 
+            \(m = 4c\) for some integer \(c\).
+
+            For \(n=1\), we have \(9^1 + 5^1 - 2 = 12 = 4(3)\) 
+
+            For \(n=2\), we have \(9^2 + 5^2 - 2 = 104 = 4(26)\) 
+
+            We can make the inductive hypothesis that \(9^n + 5^n - 2 = 4m\)
+            holds true for \(1 \le n \le k\).
+
+            Thus,
+            \[9^k = 4m - 5^k + 2\]
+            and
+            \[5^k = 4m - 9^k + 2\]
+
+            Then, we see if the relation holds for \(n = k+1\). 
+            \[9^{k+1} + 5^{k+1} - 2\]
+            \[9(9^k) + 5(5^k) - 2\]
+            \[9(4m - 5^k + 2) + 5(4m - 9^k + 2) - 2\]
+            \[36m - 9(5^k) + 18 + 20m - 5(9^k) + 10 - 2\]
+            \[56m - 9(5^k) + 5(9^k) + 26\]
+            \[56m - 45(\frac{5^k}{5} + \frac{9^k}{9}) + 26\]
+            \[56m - 45(5^{k-1} + 9^{k-1} - 2) - 2(45) + 26\]
+            \[56m - 45(5^{k-1} + 9^{k-1} - 2) - 64\]
+            
+            Now, we can use our inductive hypothesis to say 
+            \(5^{k-1} + 9^{k-1} - 2 = 4m_1\)
+
+            Thus we have 
+            \[9^{k+1} + 5^{k+1} - 2 = 56m - 45(4m_1) - 64 = 4(14m - 45m_1 - 16)\]
+
+            Therefore, \(9^n + 5^n - 2\) is divisible by 4 for all \(n \ge 1\).
+        \end{proof}
+    }
+
+    \item {
+        Let \(F_n\) be the \(n\)-th Fibonacci number, where \(F_0 = F_1 = 1\)
+        and \(F_n = F_{n-1} + F_{n-2}\). Prove that \(F_n \le 1.9^n\) for all
+        \(n \ge 1\).
+
+        \begin{proof}
+            We begin by verifying the relation for small \(n\).
+
+            \[n = 0, F_0 = 1 \le 1.9^0 = 1\]
+            \[n = 1, F_1 = 1 \le 1.9^1 = 1.9\]
+            \[n = 2, F_2 = 2 \le 1.9^2 = 3.61\]
+
+            Assume \(F_n \le 1.9^n\) for \(0 \le n \le k\).
+            \[F_{k+1} \le 1.9^{k+1}\]
+            \[F_k + F_{k-1} \le 1.9^{k+1}\]
+
+            Using our inductive hypothesis, we see:
+            \[F_k \le 1.9^k \text{ and } F_{k-1} \le 1.9^{k-1}\]
+
+            So,
+            \[F_k + F_{k-1} \le 1.9^k + 1.9^{k-1}\] 
+
+            By refactoring \(1.9^k + 1.9^{k-1}\), we get:
+            \[1.9^k + 1.9^{k-1} = 1.9(1.9^{k-1}) + 1.9^{k-1} = 2.9(1.9^{k-1})\]
+
+            However, \(1.9^{k+1}\) can be rewritten as \(1.9^2 (1.9^{k-1}) = 3.61(1.9^{k-1})\).
+
+            Finally, we see
+            \[F_{k+1} = F_k + F_{k-1} \le 2.9(1.9^{k-1}) \le 3.61(1.9^{k-1}) = 1.9^{k+1}\]
+            \[F_{k+1} \le 1.9^{k+1}\]
+
+            Therefore, \(F_n \le 1.9^n\) for all \(n \ge 1\).
+        \end{proof}
+    }
+\end{enumerate}
+
+\end{document}
