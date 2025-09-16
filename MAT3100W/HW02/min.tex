@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{mathtools, amsfonts, amsthm, graphicx, listings, xcolor}
+\usepackage{mathtools, amsfonts, amssymb, amsthm, graphicx, listings, xcolor}
 
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -91,6 +91,59 @@ Try the following settings for [width=...], and discuss what they do:
 
 \section*{[4 pts] Required Exercise 3.}
 
+\begin{enumerate}
+    \item {
+        The article took me 24 minutes to finish. I really like the raw, unfiltered
+        voice of Jonathan Malesic. It seems he has been trying to articulate 
+        these thoughts for a while. The part that I agree with most is his main 
+        idea: that AI isn't the revolutionary tech that people seem to want to 
+        believe. Sure it's impressive, and I also believe it is innovative, but 
+        that's about it. It'll change specific aspects of certain jobs,
+        software engineering per se, but it is clear to see that it can't replicate
+        the core of "cultural output": the humanness of ideas.
+
+        At it's core, AI is a fancied-up fuzzy search. Even a recent breakthrough
+        that claim to push this envelope like the Reasoning Model have been shown 
+        to actually be memorizing old patterns. In other words, a fuzzy search. 
+        The "generative" in Gen AI is really just searching through old content in 
+        hopes it'll find something that matches your prompt. 
+
+        Now one thing that I disagree with is the notion that AI is just a gimmick. 
+        It does provide value in a subset of problems that require broad, high-level
+        knowledge and understanding. Although standard AI chat bots falls short 
+        in tasks requiring deep, domain-specific knowledge, it does great in giving
+        you a "place to start" in your search. I've experienced this first hand 
+        in a lot of software engineering scenarios (I recognize the potential for
+        bias here), where I almost always use AI to build project templates, 
+        evaluate pros and cons of libraries/frameworks, and generate boilerplate. 
+
+        Questions that used to require years of experience to answer effectively
+        can now be answered "good-enough-ly" by a chat bot. This is where the true 
+        value of AI in engineering lies, acting has a heuristic for high level decisions.
+        Again, AI design decisions can and will be wrong a percentage of the time,
+        but it is folly to assume the same errors never occur with human engineers.
+    
+    }
+
+    \item {
+        My favorite quote from the article is "AI progress in cultural production 
+        already seems to have slowed because the models have run out of 
+        human-generated writing to “learn” from and increasingly feed on AI-produced 
+        content, gulping down a vile soup of their own ever-concentrating ordure." 
+
+        This quote really resonates with me because I hate seeing AI slop online. 
+        It seems everywhere I look I see it. I can't avoid it, and so the best I 
+        can do is ignore it. From YouTube shorts featuring and AI voice over 
+        narrating a nonsensical AI generated story, to emoji-filled LinkedIn 
+        "guides", AI generated content is filling the internet. 
+
+        If I wanted a AI generated response, I would prompt it myself. It is, in 
+        my opinion, at least slightly disrespectful to post AI content like 
+        this because it is essentially saying that you don't think the audience 
+        is smart enough to know.
+    }
+\end{enumerate}
+
 \section*{[2 + 2 + 3 + 3 + 2] Choice Exercise 4.}
 
 \begin{enumerate}
@@ -135,7 +188,7 @@ Try the following settings for [width=...], and discuss what they do:
 
             For \(n=1\), we have \(9^1 + 5^1 - 2 = 12 = 4(3)\).
 
-            For \(n=2\), we have \(9^2 + 5^2 - 2 = 104 = 4(26)\) .
+            For \(n=2\), we have \(9^2 + 5^2 - 2 = 104 = 4(26)\).
 
             We can make the inductive hypothesis that \(9^n + 5^n - 2 = 4m\)
             holds true for \(1 \le n \le k\).
@@ -197,6 +250,45 @@ Try the following settings for [width=...], and discuss what they do:
             \[F_{k+1} \le 1.9^{k+1}\]
 
             Therefore, \(F_n \le 1.9^n\) for all \(n \ge 1\).
+        \end{proof}
+    }
+\end{enumerate}
+
+\section*{[3+3+3] Choice Exercise 5.}
+
+\begin{enumerate}
+    \item[3.] {
+        Prove or disprove that if \(n\) is a positive integer, then the concatenation 
+        \(nnn\) is divisible by \(37\). 
+
+        \begin{proof}
+            We first define the concatenation function \(C\) as: 
+            \[C(n) = \begin{cases}
+                111 \times n & 1 \le n \le 9 \\
+                10101 \times n & 10 \le n \le 99 \\
+                1001001 \times n & 100 \le n \le 999 \\
+                ...
+
+            \end{cases}\]
+
+            For the cases \(1 \le n \le 9\) and \(10 \le n \le 99\), our proposition 
+            holds true since \(37 \mid 111\) and \(37 \mid 10101\). Thus, \(37 \mid C(n)\)
+            for \(1 \le n \le 99\).
+
+            However, \(37 \nmid 1001001\), so there may be a case \(100 \le n \le 999\) 
+            where \(37 \nmid C(n)\). 
+
+            Since \(999 - 100 > 37\), by the Pigeon Hole Principle (maybe, I'm 
+            too sure if I am using this Principle correctly), there must be a 
+            value \(100 \le n \le 999\) where \(37 \nmid n\). 
+
+            By extension, because 
+
+            Thus, we have disproven the claim that the concatenation of any positive
+            integer \(n\) is divisible by \(37\). 
+
+            For example, the concatenation of 186 is 186,186,186, which is not 
+            divisible by 37.
         \end{proof}
     }
 \end{enumerate}
