@@ -108,31 +108,34 @@ following:
     \item {
         \(a \times b \equiv a' \times b' \pmod{m}\).
 
-        Following from equation \ref{eq:1}, we get 
-        \begin{equation} \label{eq:3}
-            a = a' + m \times k_1.
-        \end{equation}
-        Similarly, from equation \ref{eq:2}, we  get 
-        \begin{equation} \label{eq:4}
-            b = b' + m \times k_2.
-        \end{equation}
+        \begin{proof}
+            Following from equation \ref{eq:1}, we get 
+            \begin{equation} \label{eq:3}
+                a = a' + m \times k_1.
+            \end{equation}
+            Similarly, from equation \ref{eq:2}, we  get 
+            \begin{equation} \label{eq:4}
+                b = b' + m \times k_2.
+            \end{equation}
 
-        By multiplying equations \ref{eq:3} and \ref{eq:4}, we get 
-        \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
+            By multiplying equations \ref{eq:3} and \ref{eq:4}, we get 
+            \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
 
-        \textit{From now on, I will omit the \(\times\) symbol.}
+            \textit{From now on, I will omit the \(\times\) symbol.}
 
-        By distributing, we get 
-        \[ab = a'b' + a'mk_2 + b'mk_1 + m^2k_1k_2.\]
-        
-        We can factor out \(m\) to find 
-        \[ab = a'b' + m(a'k_2 + b'k_1 + mk_1k_2).\]
+            By distributing, we get 
+            \[ab = a'b' + a'mk_2 + b'mk_1 + m^2k_1k_2.\]
+            
+            We can factor out \(m\) to find 
+            \[ab = a'b' + m(a'k_2 + b'k_1 + mk_1k_2).\]
 
-        We can subtract \(a'b'\) from both sides to find 
-        \[ab - a'b' = m(a'k_2 + b'k_1 + mk_1k_2).\]
+            We can subtract \(a'b'\) from both sides to find 
+            \[ab - a'b' = m(a'k_2 + b'k_1 + mk_1k_2).\]
 
-        By definition, we see that \(m \mid (ab - a'b')\), and, by extension, 
-        \(ab \equiv a'b' \pmod{m}\).
+            By definition, we see that \(m \mid (ab - a'b')\), and, by extension, 
+            \(ab \equiv a'b' \pmod{m}\).
+                
+        \end{proof}
     }
 \end{enumerate}
 
