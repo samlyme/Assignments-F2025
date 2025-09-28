@@ -66,7 +66,7 @@
             \item {
                 Compute the desnity of this graph.
 
-                \[D = \frac{2(8)}{10(9)} = 0.3555\]
+                \[D = \frac{2(10)}{8(7))} = 0.357\]
             }
         \end{itemize}
     }
@@ -167,12 +167,49 @@
                     }
 
                     \item {
-                        Compute the average. 
-                        
+                        Compute the average: 2.36.
                     }
                 \end{itemize}
+            }
+
+            \item {
+                Communities (by eye) (2 points)
+
+                \begin{itemize}
+                    \item Groups \{1, 2, 3\} and \{4, 5, 6 ,7, 8\} seem to be communities.
+                    \item {
+                        Nodes \{1, 2, 3\} form a triangle, while \{4, 5, 6\} 
+                        and \{5, 6, 7\} also form triangles.
+                    }
+                \end{itemize}
+
             }
         }
     }
 \end{enumerate}
+
+\section*{Part B: Coding (10 points)}
+
+\lstinputlisting[language=Python]{./code/main.py}
+
+Outputs from code:
+\begin{verbatim}
+density 0.35714285714285715
+clustering coef 0.3333333333333333
+avg. path length 2.2857142857142856
+modularity 0.355
+
+\end{verbatim}
+
+\section*{Part C: Reflection (5 points)}
+
+The results from the hand-calculation mostly lined up with the results from the 
+code. The only real discrepancy was between the average path length. This is likely
+due to the code including the paths starting and ending on the same node in the 
+calculation of the average, but my hand calculation doesn't include these paths.
+The communities that I indentified by eye matched up decently with those suggested 
+by the modularity score. However, I recognize that this technique doesn't scale. 
+If this graph was an online community, it would suggest that nodes \{1, 2, 3\} 
+form a relatively tight community and is connected to another community \{4, 5, 6, 7, 8\} 
+via a single bridge.
 \end{document}
