@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amsfonts, amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\title{Proofs Portfolio\\[5pt] \large MAT 3100W: Intro to Proofs}
+\author{Sam Ly}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+(Leave this blank for now. Here's an outline of course topics for your reference.)
+
+\section{Proof techniques}
+(Here we give examples of some proof techniques.)
+
+\subsection{Proof by Induction}
+As an example of Proof by Induction, we will prove the following.
+
+\begin{proposition}
+    Let \(F_n\) be the \(n\)-th Fibonacci number, where \(F_0 = F_1 = 1\)
+    and \(F_n = F_{n-1} + F_{n-2}\). Prove that \(F_n \le 1.9^n\) for all
+    \(n \ge 1\).
+\end{proposition}
+\begin{proof}
+    We begin by verifying the relation for small \(n\) to create our 
+    base cases:
+    \[n = 1, F_1 = 1 \le 1.9^1 = 1.9\]
+    \[n = 2, F_2 = 2 \le 1.9^2 = 3.61.\]
+
+    We then form our inductive hypothesis by assumimg \(F_n \le 1.9^n\) for \(1 \le n \le k\).
+    \[F_{k+1} \le 1.9^{k+1}\]
+    \[F_k + F_{k-1} \le 1.9^{k+1}.\]
+
+    Using our inductive hypothesis, we see that \(F_k \le 1.9^k\)
+    and \(F_{k-1} \le 1.9^{k-1}\).
+
+    So, \(F_k + F_{k-1} \le 1.9^k + 1.9^{k-1}\).
+
+    By refactoring \(1.9^k + 1.9^{k-1}\), we get:
+    \[1.9^k + 1.9^{k-1} = 1.9(1.9^{k-1}) + 1.9^{k-1} = 2.9(1.9^{k-1}).\]
+
+    Also, \(1.9^{k+1}\) can be rewritten as \(1.9^2 (1.9^{k-1}) = 3.61(1.9^{k-1})\).
+
+    Finally, we see
+    \[F_{k+1} = F_k + F_{k-1} \le 2.9(1.9^{k-1}) \le 3.61(1.9^{k-1}) = 1.9^{k+1}\]
+    \[F_{k+1} \le 1.9^{k+1}.\]
+
+    Therefore, \(F_n \le 1.9^n\) for all \(n \ge 1\).
+\end{proof}
+
+\pagebreak
+\appendix
+\begin{center}
+    \LARGE Appendix
+\end{center}
+\noindent (The first section, ``Course objectives and student learning outcomes'' is just here for your reference.)
+\section{Course objectives and student learning outcomes}
+
+\begin{enumerate}
+    \item Students will learn to identify the logical structure of mathematical statements and apply appropriate strategies to prove those statements.
+    \item Students learn methods of proof including direct and indirect proofs (contrapositive, contradiction) and induction.
+    \item Students learn the basic structures of mathematics, including sets, functions, equivalence relations, and the basics of counting formulas.
+    \item Students will be able to prove multiply quantified statements.
+    \item Students will be exposed to well-known proofs, like the irrationality of $\sqrt{2}$ and the uncountability of the reals.
+\end{enumerate}
+
+\subsection{Expanded course description}
+\begin{itemize}
+    \item Propositional logic, truth tables, DeMorgan's Laws
+    \item Sets, set operations, Venn diagrams, indexed collections of sets
+    \item Conventions of writing proofs
+    \item Proofs
+    \begin{itemize}
+        \item Direct proofs
+        \item Contrapositive proofs
+        \item Proof by cases
+        \item Proof by contradiction
+        \item Existence and Uniqueness proofs
+        \item Proof by Induction
+    \end{itemize}
+    \item Quantifiers
+    \begin{itemize}
+        \item Proving universally and existentially quantified statements
+        \item Disproving universally and existentially quantified statements
+        \item Proving and disproving multiply quantified statements
+    \end{itemize}
+    \item Number systems and basic mathematical concepts
+    \begin{itemize}
+        \item The natural numbers and the integers, divisibility, and modular arithmetic
+        \item Counting: combinations and permutations, factorials
+        \item Rational numbers, the irrationality of $\sqrt{2}$
+        \item Real numbers, absolute value, and inequalities
+    \end{itemize}
+    \item Relations and functions
+    \begin{itemize}
+        \item Relations, equivalence relations
+        \item Functions
+        \item Injections, surjections, bijections
+    \end{itemize}
+    \item Cardinality
+    \begin{itemize}
+        \item Countable and uncountable sets
+        \item Countability of the rational numbers, $\mathbb{Q}$
+        \item Uncountability of the real numbers, $\mathbb{R}$
+    \end{itemize}
+\end{itemize}
+\end{document}
