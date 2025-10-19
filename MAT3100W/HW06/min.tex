@@ -34,7 +34,7 @@
 
 \begin{document}
 \maketitle
-
+\section*{Total points: 22}
 \section*{Required Exercise 1 [4]}
 
 Done.
@@ -54,7 +54,7 @@ induction to prove that \(F_n\) is even if and only if \(3 \mid n\).
     \begin{enumerate}
         \item \(F_1 = 1\)
         \item \(F_2 = 1\)
-        \item \(F_3 = 1\)
+        \item \(F_3 = 2\)
     \end{enumerate}
 
     Then, we assume that \(F_n\) is even if and only if \(3 \mid n\) for all 
@@ -76,7 +76,9 @@ induction to prove that \(F_n\) is even if and only if \(3 \mid n\).
     \end{align*}
 
     Then, we see that \(F_{k+3}\) must be even because \(F_{k+2}\) and \(F_{k+1}\)
-    are both odd. Also, \(k + 3 \equiv 0 \pmod3\).
+    are both odd. 
+    
+    Also, \(k + 3 \equiv 0 \pmod3\), so \(3 \mid k + 3\).
 
     Therefore, \(F_n\) is even if and only if \(3 \mid n\). 
 \end{proof}
@@ -108,6 +110,58 @@ induction to prove that \(F_n\) is even if and only if \(3 \mid n\).
 
     \item {
         Done.
+    }
+\end{enumerate}
+
+\section*{Choice Exercise 6 [4]}
+
+In class, we claimed that for all pairs of real numbers \(x, y \in \mathbb{R}\)
+with \(x < y\), there exists a rational number \(r \in \mathbb{Q}\) such that \(x<r<y\).
+
+\begin{enumerate}
+    \item {
+        [1] Suppose \(x = \pi \approx 3.14159265\) and \(y = 22/7 \approx 3.142857\).
+        Find a rational number \(r\) such that \(\pi < r < 22/7\).
+
+        We can find that \(r = 3.142\) satisifies our condition. 
+    }
+    \item {
+        [3] Prove that for all integers \(d > 1/(y - x)\), there exists an integer 
+        \(n\) such that \(x < n/d < y\). (In the above case, \(d \ge 791\) and 
+        if \(d = 791\), then \(n = 2485\)).
+
+        \begin{proof}
+            We first define a useful interpretation of constructing rational 
+            numbers by dividing two integers \(r = n/d\). We are essentially taking 
+            \(n\) steps of length \(1/d\).
+
+            Thus, if we have a sufficiently small step size, there must be an 
+            integer number of steps for us to land on the range \(x < r < y\). 
+
+            We see that if we have a step size smaller than \(y - x\), we must 
+            always land within the range \(x < r < y\). 
+            
+            We can see this by imagining a worst case scenario where \(\frac{n-1}{d} = x\). 
+            Thus, because \(1/d < y - x\), 
+            \begin{align*}
+                x < \frac{n-1}{d} + \frac{1}{d} &< y\\
+                x < \frac{n}{d} &< y
+            \end{align*}
+
+            Similarly, we can see the other worst case scenario where \(\frac{n+1}{d} = y\). 
+            Thus, because \(1/d < y - x\), 
+            \begin{align*}
+                x < \frac{n+1}{d} - \frac{1}{d} &< y\\
+                x < \frac{n}{d} &< y
+            \end{align*}
+
+            In order to achieve a step size smaller than \(y - x\), we must 
+            satisfy the condition \(1/d < y - x\). In other words, \(d > \frac{1}{y-x}\).
+            Furthermore, increasing \(d\) will only decrease the step size. 
+
+            Thus, for all real numbers, and by extension integers, \(d > \frac{1}{y-x}\), there must exist an 
+            integer \(n\) where \(x < n/d < y\). 
+        \end{proof}
     }
 \end{enumerate}
 
@@ -201,8 +255,8 @@ induction to prove that \(F_n\) is even if and only if \(3 \mid n\).
             |x - a| &< \epsilon / 2.
         \end{align*}
 
-        We no notice that for any value \(\epsilon\), we can pick \(\delta = \epsilon / 2\),
-        and get \(|x - a| \Rightarrow |x - a|\). This value is true for all \(x\), 
+        We notice that for any value \(\epsilon\), we can pick \(\delta = \epsilon / 2\),
+        and get \(|x - a| < \delta \Rightarrow |x - a| < \delta\). This value is true for all \(x\), 
         and for all \(a\). 
 
         Therefore, \(f(x) = 2x + 1\) is continuous.
