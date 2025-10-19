@@ -19,8 +19,88 @@
 \section{Introduction}
 (Leave this blank for now. Here's an outline of course topics for your reference.)
 
+\section{Mathematical concepts}
+
 \section{Proof techniques}
-(Here we give examples of some proof techniques.)
+
+\subsection{Direct Proofs}
+Suppose \(a \equiv a' \pmod{m}\) and \(b \equiv b' \pmod{m}\). Prove the
+following:
+
+\begin{enumerate}
+    \item {
+        \(a + b \equiv a' + b' \pmod{m}\).
+
+        \begin{proof}
+            We begin with by defining \(a \equiv a' \pmod{m}\) as \(m \mid (a - a')\).
+            Similarly, \(m \mid (b - b')\).
+
+            Following from these definitions, we write:
+            \begin{equation} \label{eq:1}
+                a - a' = m \times k_1
+            \end{equation}
+            \begin{equation} \label{eq:2}
+                b - b' = m \times k_2
+            \end{equation}
+
+            We can add equations \ref{eq:1} and \ref{eq:2} together to get 
+            \(a + b - a' - b' = m \times k_1 + m \times k_2\).
+
+            With some factoring, we get \((a + b) - (a' + b') = m (k_1 + k_2)\).
+
+            By definition, we find that \(m \mid (a + b) - (a' + b')\), and thus
+            \(a + b \equiv a' + b' \pmod{m}\).
+        \end{proof}
+    }
+
+    \item {
+        \(a - b \equiv a' - b' \pmod{m}\).
+
+        \begin{proof}
+            Following from Proof 1, we can instead subtract equation \ref{eq:1}
+            and \ref{eq:2} to get 
+            \\ \(a - b - a' + b' = m \times k_1 - m \times k_2\).
+
+            With some factoring, we get \((a-b) - (a'-b') = m(k_1 - k_2)\).
+
+            By definition, we find that \(m \mid (a - b) - (a' - b')\), and thus
+            \(a - b \equiv a' - b' \pmod{m}\).
+        \end{proof}
+    }
+
+    \item {
+        \(a \times b \equiv a' \times b' \pmod{m}\).
+
+        \begin{proof}
+            Following from equation \ref{eq:1}, we get 
+            \begin{equation} \label{eq:3}
+                a = a' + m \times k_1.
+            \end{equation}
+            Similarly, from equation \ref{eq:2}, we  get 
+            \begin{equation} \label{eq:4}
+                b = b' + m \times k_2.
+            \end{equation}
+
+            By multiplying equations \ref{eq:3} and \ref{eq:4}, we get 
+            \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
+
+            \textit{From now on, I will omit the \(\times\) symbol.}
+
+            By distributing, we get 
+            \[ab = a'b' + a'mk_2 + b'mk_1 + m^2k_1k_2.\]
+            
+            We can factor out \(m\) to find 
+            \[ab = a'b' + m(a'k_2 + b'k_1 + mk_1k_2).\]
+
+            We can subtract \(a'b'\) from both sides to find 
+            \[ab - a'b' = m(a'k_2 + b'k_1 + mk_1k_2).\]
+
+            By definition, we see that \(m \mid (ab - a'b')\), and, by extension, 
+            \(ab \equiv a'b' \pmod{m}\).
+                
+        \end{proof}
+    }
+\end{enumerate}
 
 \subsection{Proof by Induction}
 As an example of Proof by Induction, we will prove the following.
@@ -56,6 +136,65 @@ As an example of Proof by Induction, we will prove the following.
 
     Therefore, \(F_n \le 1.9^n\) for all \(n \ge 1\).
 \end{proof}
+
+\begin{proposition}
+Look up the Tower of Hanoi puzzle. Prove that given a stack of 
+disks, you can solve the puzzle in moves.
+
+\end{proposition}
+\begin{proof}
+    We begin by defining the Tower of Hanoi problem. 
+    
+    In this problem, we begin 
+    with a stack of \(n\) disks. The disks are ordered from largest at the bottom 
+    to smallest at the top. We are also given 3 `spots' to place our disks under 
+    one condition: that we never place a larger disk on top of a smaller disk. 
+
+    Following these rules, what is the minimum number of moves required to move
+    the entire pile to a new `spot'?
+    
+    We define the function \(f: \mathbb{N} \rightarrow \mathbb{N}\) such that it 
+    maps the starting stack height \(n\) to the minimum number of moves required 
+    to move the entire pile \(f(n)\).
+
+    Before immediately proving that \(f(n) = 2^n - 1\), it is more intuitive to 
+    first define \(f\) as a recurrence relation, then prove that the recurrence
+    relation is equal to \(2^n -1\).
+
+    We notice that moving the entire pile  of \(n\) disks essentially requires 3 `phases':
+    \begin{enumerate}
+        \item Moving the top \(n-1\) disks onto a single pile.
+        \item Moving the \(n\)th disk to another vacant spot.
+        \item Moving the top \(n-1\) disks onto the new spot.
+    \end{enumerate}
+
+    Thus, we know that \(f(n) = f(n-1) + 1 + f(n-1) = 1 + 2f(n-1)\), where \(f(1) = 1\).
+    We can then prove \(f(n) = 2^n -1\) using induction. 
+
+    We begin with our base cases:
+    \begin{center}
+        \begin{tabular}{c c}
+            \(n\)   & \(f(n)\) \\
+            \hline \\
+            1       & \(1 = 2^1 - 1\)\\
+            2       & \(3 = 2^2 - 1\) \\
+            3       & \(7 = 2^3 - 1\) \\
+        \end{tabular}
+    \end{center}
+
+    Now, we assume that \(f(k) = 2^k -1 \) for all \(1 \le k \le n\).
+    
+    We see that
+    \[f(k+1) = 1 + 2f(k)\]
+    \[f(k+1) = 1 + 2(2^k - 1)\]
+    \[f(k+1) = 2^{k+1} - 1.\]
+
+    Thus, \(f(n) = 2^n - 1\).
+\end{proof}
+
+\section{Final project}
+
+\section{Conclusion and reflection}
 
 \pagebreak
 \appendix
