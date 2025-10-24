@@ -21,6 +21,26 @@
 
 \section{Mathematical concepts}
 
+\subsection{Logical Statements}
+\begin{definition}
+    A logical statement is a statement that can either be \textbf{true} or \textbf{false}. 
+    Logical statements must be unambiguous, meaning all ratioal agents with access 
+    to the same information will come to the same conclusion. 
+\end{definition}
+
+\begin{proposition}
+    ``The sun rose today.'' is a \textbf{true} logical statement.
+\end{proposition}
+
+\begin{proof}
+    We begin by observing that the we can currently see the sun in the sky and 
+    that we could not see the sun in the sky last night. If we can not see the 
+    sun in the sky, it must be below the horizon. Because the sun follows a 
+    continuous path, and it had been below the horizon last night, 
+    it must have crossed the horizon at some point between last night and now. 
+    Thus the sun must have risen today.
+\end{proof}
+
 \section{Proof techniques}
 
 \subsection{Direct Proofs}
@@ -106,22 +126,61 @@ following:
 As an example of Proof by Induction, we will prove the following.
 
 \begin{proposition}
+        Show that every positive integer is a sum of one or more numbers of the 
+        form \(2^r3^s\), where \(r\) and \(s\) are nonnegative integers and no 
+        summand divides another. (For example, \(23 = 9 + 8 + 6\)).
+\end{proposition}
+\begin{proof}
+    We proceed by mathematical induction. 
+
+    We start with \(n = 0, 1\) as our base cases. We see that \(n = 0\) is true, 
+    and \(n = 1\) is true because \(1 = 2^0 3^0\).
+    
+    Now, we create the inductive hypothesis that all nonnegative 
+    integers strictly less than \(n\) have such summation.
+
+    If \(n\) is even, we can construct a valid summation by noticing 
+    that, from our inductive hypothesis, \(\frac{n}{2}\) has a valid summation 
+    \(\sum_{i=1}^{k}2^{r_i}3^{s_i}\). Since none of these summands divide 
+    any other summand, multiplying all summands by 2 also creates a set 
+    of summands such that no summand divides another.
+
+    If \(n\) is odd, we can also construct a valid summation by picking 
+    a value \(3^t\) that is the biggest power of 3 that is less than or 
+    equal to \(n\). Our proposition is trivially true if \(n = 3^t\). 
+    Otherwise, we must find a value \(m = n - 3^t\).
+
+    Since \(n\) and \(3^t\) are both odd, \(m\) must be even. Also notice 
+    that \(m < n\). Thus, there must exist a valid summation
+    \(m = \sum_{j=1}^{k}2^{r_j}3^{s_j}\) where all \(r_j \ge 1\).
+
+    Since all summands of \(m\) are even, \(3^t\) can not be divisible 
+    by any of the summands of \(m\). Also, since \(r_j \ge 1\), there 
+    must not be any summand where \(s_j \ge t\) because if such summand 
+    existed, we would find at least a value of 
+    \(n = 3^t + 2(3^t) = 3^{t+1}\). This is a contradiction, since we 
+    defined \(3^t\) as the largest power of 3 less than or equal to \(n\).
+
+    Thus, \(n = \sum 2^r3^s\) where no summand divides another for all 
+    nonnegative integers \(n\).
+\end{proof}
+
+\begin{proposition}
     Let \(F_n\) be the \(n\)-th Fibonacci number, where \(F_0 = F_1 = 1\)
     and \(F_n = F_{n-1} + F_{n-2}\). Prove that \(F_n \le 1.9^n\) for all
     \(n \ge 1\).
 \end{proposition}
 \begin{proof}
-    We begin by verifying the relation for small \(n\) to create our 
-    base cases:
+    We proceed by induction, starting with the base cases, where \(n=1,2\):
     \[n = 1, F_1 = 1 \le 1.9^1 = 1.9\]
     \[n = 2, F_2 = 2 \le 1.9^2 = 3.61.\]
 
-    We then form our inductive hypothesis by assumimg \(F_n \le 1.9^n\) for \(1 \le n \le k\).
-    \[F_{k+1} \le 1.9^{k+1}\]
-    \[F_k + F_{k-1} \le 1.9^{k+1}.\]
+    We assume as an inductive hypothesis that \(F_n \le 1.9^n\) for \(1 \le n \le k\).
 
     Using our inductive hypothesis, we see that \(F_k \le 1.9^k\)
     and \(F_{k-1} \le 1.9^{k-1}\).
+    % \[F_{k+1} \le 1.9^{k+1}\]
+    % \[F_k + F_{k-1} \le 1.9^{k+1}.\]
 
     So, \(F_k + F_{k-1} \le 1.9^k + 1.9^{k-1}\).
 
@@ -134,7 +193,8 @@ As an example of Proof by Induction, we will prove the following.
     \[F_{k+1} = F_k + F_{k-1} \le 2.9(1.9^{k-1}) \le 3.61(1.9^{k-1}) = 1.9^{k+1}\]
     \[F_{k+1} \le 1.9^{k+1}.\]
 
-    Therefore, \(F_n \le 1.9^n\) for all \(n \ge 1\).
+    Thus, we conclude that by the principle of mathematical induction, 
+    \(F_n \le 1.9^n\) for all \(n \ge 1\).
 \end{proof}
 
 \begin{proposition}
