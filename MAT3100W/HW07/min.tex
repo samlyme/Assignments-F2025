@@ -165,6 +165,75 @@ We see that:
     }
 \end{enumerate}
 
+\section*{Choice Exercise 6 [3]}
+\begin{enumerate}
+    \item {
+        In the first required exercise, you proved that \(\sqrt{2}\) is irrational.
+        Use a similar idea to prove that the square root of 3 is irration: that is, 
+        \(\sqrt{3} \not\in \mathbb{Q}\).
+
+        \begin{proof}
+            We proceed by contradiction. First we assume that \(\sqrt{3}\) is rational,
+            and thus can be written in the form \(a/b\) for \(a, b \in \mathbb{N}\)
+            in lowest terms. Since \(a\) and \(b\) are in lowest terms, they can not 
+            both be divisible by 3.
+            
+            Using algebraic manipulation, we see:
+            \begin{align*}
+                \sqrt{3} &= \frac{a }{b }\\
+                3 &= \frac{a^2 }{b^2} \\
+                b^2 &= \frac{a^2}{3}.
+            \end{align*}
+
+            Since \(b^2\) is an integer, \(3 \mid a^2\), and by extension \(3 \mid a\).
+            Thus, \(a = 3n\) for some integer \(n\). By substituting, we see:
+            \begin{align*}
+                b^2 &= \frac{(3n)^2}{3} \\
+                b^2 &= \frac{9n^2}{3} \\
+                b^2 &= 3n^2. \\
+            \end{align*}
+
+            Thus, \(3 \mid b^2\), and by extension, \(3 \mid b\). Therefore, we have 
+            arrived at a contradiction, so \(\sqrt{3}\) is not rational. 
+        \end{proof}
+    }
+\end{enumerate}
+
+\section*{Choice Exercise 7 [3]}
+Prove that if \(\star\colon X \times X \to X\) is a binary operation and 
+\(a \star b = b \star a\) for all \(a, b \in X\), then
+\[a_1 \star a_2 \star \dots \star a_n = a_n \star \dots \star a_2 \star a_1\]
+for all positive integers \(n \in \mathbb{Z}\). 
+
+\begin{proof}
+    We proceed via induction. For our base cases, we see that our relation holds
+    true for \(n = 2\):
+    \[a_1 \star a_2 = a_2 \star a_1.\]
+
+    As an inductive hypothesis, we assume 
+    \[a_1 \star a_2 \star \dots \star a_n = a_n \star \dots \star a_2 \star a_1\]
+    holds for \(n \le k\). 
+
+    Thus, we have
+    \[a_1 \star a_2 \star \dots \star a_k = a_k \star \dots \star a_2 \star a_1.\]
+
+    Then, for \(n = k+1\) we have:
+    \begin{align*}
+        &a_1 \star a_2 \star \dots \star a_k \star a_{k+1}\\
+        &= a_{k+1} \star (a_1 \star a_2 \star \dots \star a_k).
+    \end{align*}
+
+    Then, from our inductive hypothesis, we substitute to get:
+    \begin{align*}
+        &= a_{k+1} \star a_k \star \dots \star a_2 \star a_1.
+    \end{align*}
+
+    Thus, for any binary operation \(\star: X \times X \rightarrow X\) such that 
+    \(a \star b = b \star a\) for all \(a, b \in X\), then 
+    \[a_1 \star a_2 \star \dots \star a_n = a_n \star \dots \star a_2 \star a_1\]
+    for all positive integers \(n \in \mathbb{Z}\). 
+\end{proof}
+
 \section*{Choice Exercise 10 [6]}
 
 \begin{enumerate}
