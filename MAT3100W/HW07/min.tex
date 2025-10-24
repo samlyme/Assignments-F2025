@@ -219,7 +219,43 @@ We see that:
             }
         \end{itemize}
     }
-    
+
+    \item {
+        [4] Recursion and induction are essentially the same idea. Use induction 
+        to prove that the formula is correct.
+
+        \begin{proof}
+            We proceed with mathematical induction. We see that for our base cases 
+            \(n = 0, 1\), there are no such strings that satisfy our condition 
+            because there are no non-trivial palindromes of length 0 or 1. So, 
+            \(a(0) = a(1) = 0\).
+
+            For our inductive hypothesis, we assume
+            \[a(n) = 3a(n-1) + 3^{\lceil n/2 \rceil} - a(\lceil n/2 \rceil) \text{ for } 2 \le n \le k. \]
+
+            For \(n = k+1\),  we have
+            \[a(k+1) = 3a(k) + 3^{\lceil k/2 \rceil} -a(\lceil k/2 \rceil).\]
+
+            We arrive at this conclusion by seeing that when we increase our string 
+            length by 1, we can:
+            \begin{enumerate}
+                \item append \(a\), \(b\), or \(c\) to the end of a previously valid string to create a new valid string.
+                \item create a new palidrome of length \(k+1\) that begins with \(a\). 
+            \end{enumerate}
+
+            However, see that there are certain strings that are being counted twice
+            between these two cases. For example, \(aaa \dots a\) can be created 
+            from both case (a) and (b). 
+
+            Specifically, the strings that are counted twice are the strings that 
+            are both fully a palindrome, and contain a subpalindrome. The only 
+            way for this to happen is if the first half of the string contains a palindrome. 
+
+            Thus, our inductive step holds. Therefore, by induction, the n'th 
+            term of our sequence is 
+            \[a(n) = 3a(n-1) + 3^{\lceil n/2 \rceil} - a(\lceil n/2 \rceil) \text{ for } 2 \le n \le k. \]
+        \end{proof}
+    }
 \end{enumerate}
 
 \includepdf[pages=-]{portfolio.pdf}
