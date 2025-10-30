@@ -29,7 +29,7 @@ def reverse_replay(g: Iterator[R]) -> Iterator[R]:
         seen.append(elem)
         yield from reversed(seen)
     
-def compose(a: Iterator[R], b: Iterator[S]) -> Iterator[tuple[R, S]]:
+def cartesian(a: Iterator[R], b: Iterator[S]) -> Iterator[tuple[R, S]]:
     f = forward_replay(a)
     r = reverse_replay(b)
     yield from zip(f, r)
@@ -43,9 +43,9 @@ def set_pow(it: Callable[[], Iterator[R]], pow: int) -> Iterator[Tree[R]]:
 
     if pow % 2 == 0:
         
-        return compose(*tee(set_pow(it, pow//2), 2))
+        return cartesian(*tee(set_pow(it, pow//2), 2))
 
-    return compose(it(), set_pow(it, pow-1))
+    return cartesian(it(), set_pow(it, pow-1))
 
 def NxN() -> Iterator:
     yield from set_pow(N, 2)

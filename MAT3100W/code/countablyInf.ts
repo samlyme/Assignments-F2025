@@ -43,7 +43,7 @@ export function* zipIter<T, U>(
   }
 }
 
-export function* compose<T, R>(
+export function* cartesianProduct<T, R>(
   a: Iterable<T>,
   b: Iterable<R>
 ): IterableIterator<[T, R]> {
@@ -58,10 +58,10 @@ function* setPower<T>(it: () => Generator<T>, pow: number): Generator<Tree<T>> {
     if (pow == 1) yield* it();
 
     if (pow % 2 == 0) {
-        yield* compose(setPower(it, pow / 2), setPower(it, pow / 2));
+        yield* cartesianProduct(setPower(it, pow / 2), setPower(it, pow / 2));
     }
     else {
-        yield* compose(it(), setPower(it, pow-1));
+        yield* cartesianProduct(it(), setPower(it, pow-1));
     }
 }
 
