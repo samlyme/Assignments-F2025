@@ -81,4 +81,4 @@ it = set_pow(N, p)
 m = 100
 for i in range(m+1):
     x = next(it)
-    print(x, flatten_tree(x))
+    print(flatten_tree(x))
