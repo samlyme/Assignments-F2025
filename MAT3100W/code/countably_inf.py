@@ -86,6 +86,8 @@ def flatten_tree(t: Tree[R]) -> R | tuple[R, ...]:
     return tuple(leaves(t))
 
 
+# for i, x in enumerate(set_pow(N, 3)):
+#     print(i, flatten_tree(x))
 
 p = 5
 it = set_pow(N, p)
