@@ -29,15 +29,25 @@ function* reverseReplay<T>(g: Iterable<T>): Generator<T> {
     }
 }
 
-function* compose<T, R>(a: Iterator<T>, b: Iterator<R>): Generator<[T, R]> {
-    while (true) {
-        const ra = a.next();
-        const rb = b.next();
+export function* zipIter<T, U>(
+  a: Iterable<T>,
+  b: Iterable<U>
+): IterableIterator<[T, U]> {
+  const ita = a[Symbol.iterator]();
+  const itb = b[Symbol.iterator]();
+  while (true) {
+    const ra = ita.next();
+    const rb = itb.next();
+    if (ra.done || rb.done) break;
+    yield [ra.value, rb.value];
+  }
+}
 
-        if (ra.done || rb.done) break;
-
-        yield [ra.value, rb.value];
-    }
+export function* compose<T, R>(
+  a: Iterable<T>,
+  b: Iterable<R>
+): IterableIterator<[T, R]> {
+  yield* zipIter(forwardReplay(a), reverseReplay(b));
 }
 
 type Tree<T> = T | [Tree<T>, Tree<T>];
@@ -71,9 +81,9 @@ function flattenTree<T>(tree: Tree<T>): T[] {
     return [...trav(tree)];
 }
 
-const N3 = setPower(N, 9)
+const N3 = setPower(N, 5)
 
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 101; i++) {
     const res: IteratorResult<Tree<number>> = N3.next();
     console.log(flattenTree(res.value));
 }
