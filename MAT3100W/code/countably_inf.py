@@ -1,5 +1,31 @@
+from csv import Error
 from typing import Callable, Iterator, TypeVar
 from itertools import islice, tee
+
+# 2. a.
+def f(n: int):
+    if n < 0:
+        raise Error("n must be a natural number")
+
+    if n % 2 == 0:
+        return n // 2
+    return - (n + 1) // 2
+
+print([f(n) for n in range(11)])
+
+def g(n: int):
+    if n >= 0:
+        return 2 * n 
+    return -2*n - 1
+
+# 2. b. i.
+print([g(n) for n in range(-5, 6)])
+
+# 2. b. ii.
+print([f(g(n)) for n in range(-5, 6)])
+
+# 2. b. iii.
+print([g(f(n)) for n in range(0, 11)])
 
 def N() -> Iterator[int]:
     i = 0 
@@ -76,9 +102,9 @@ def flatten_tree(t: Tree[R]) -> R | tuple[R, ...]:
 # for i, x in enumerate(set_pow(N, 3)):
 #     print(i, flatten_tree(x))
 
-p = 5
-it = set_pow(N, p)
-m = 100
-for i in range(m+1):
-    x = next(it)
-    print(flatten_tree(x))
+# p = 5
+# it = set_pow(N, p)
+# m = 100
+# for i in range(m+1):
+#     x = next(it)
+#     print(flatten_tree(x))
