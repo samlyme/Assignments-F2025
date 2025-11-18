@@ -141,6 +141,7 @@
 \end{definition}
 
 \begin{theorem}
+    \label{def:de-morgans-sets}
     DeMorgan's Laws for Sets:
     \begin{enumerate}
         \item \( (A \cap B)^c =  A^c \cup  B^c\)
@@ -148,6 +149,17 @@
     \end{enumerate}
 
 \end{theorem}
+
+\begin{proposition}
+    \label{prop:generalized-demorgan}
+
+    For all integers \(n \ge 2\):
+    \begin{enumerate}
+        \item \(\left( A_1 \cup A_2 \cup ... \cup A_n \right)^c = A_1^c \cap A_2^c \cap ... \cap A_n^c \)
+        \item \(\left( A_1 \cap A_2 \cap ... \cap A_n \right)^c = A_1^c \cup A_2^c \cup ... \cup A_n^c \)
+    \end{enumerate}
+
+\end{proposition}
 
 \subsubsection{Venn diagrams}
 
@@ -261,6 +273,7 @@
 \end{definition}
 
 \begin{proposition}
+    \label{prop:Q-countable}
     \todo{Prove this wtih existence and uniqueness}
     \(\mathbb{Q }\) is countably infinite. 
 \end{proposition}
@@ -272,6 +285,7 @@
 \end{definition}
 
 \begin{proposition}
+    \label{prop:R-uncountable}
     \todo{Proof by contradiction.}
     \(\mathbb{R }\) is not countably infinite.
 \end{proposition}
@@ -476,7 +490,72 @@ Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
     a countably infinite set of discrete elements. 
 \end{definition}
 
-\todo{Prove generalized DeMorgan's law.}
+\begin{example}
+    \Cref{prop:generalized-demorgan} can be proven with induction.
+
+    For the first case, we have
+    \[\left( A_1 \cup A_2 \cup ... \cup A_n \right)^c = A_1^c \cap A_2^c \cap ... \cap A_n^c.\]
+    \begin{proof}
+        First, we define some useful notation for a union and intersection
+        for a large series of sets \(A_1, A_2, ..., A_3\):
+        \[ \bigcup_{i=1}^{n} A_i = A_1 \cup A_2 \cup ... \cup A_n\]
+        \[ \bigcap_{i=1}^{n} A_i = A_1 \cap A_2 \cap ... \cap A_n.\]
+
+        First, we use \cref{def:de-morgans-sets} (DeMorgan's Law for Sets)
+        as the base case \(n=2\),
+        \(\left( A_1 \cup A_2 \right)^c = A_1^c \cap A_2^c.\)
+
+        Then, as our inductive hypothesis, we assume that 
+        \[ \left( \bigcup_{i=1}^{n} A_i \right)^c = \bigcap_{i=1}^{n} A_i^c, \text{ for } n \le k.\]
+
+        Then, we see that for \(n+1\), 
+        \begin{align*}
+            \left( \bigcup_{i=1}^{n+1} A_i \right)^c &= \left( \bigcup_{i=1}^{n} A_i \cup A_{n+1} \right)^c \\
+            \left( \bigcup_{i=1}^{n+1} A_i \right)^c &= \left( \bigcup_{i=1}^{n} A_i \right)^c \cap A_{n+1}^c .\\
+        \end{align*}
+
+        We can use our inductive hypothesis to substitute 
+        \(\left( \bigcup_{i=1}^{n} A_i \right)^c = \bigcap_{i=1}^{n} A_i^c\)
+        to get,
+        \begin{align*}
+            \left( \bigcup_{i=1}^{n+1} A_i \right)^c &= \bigcap_{i=1}^{n} A_i^c \cap A_{n+1}^c .\\
+            &= A_1^c \cap A_2^c \cap ... \cap A_n^c \cap A_{n+1}^c .\\
+        \end{align*}
+
+        Therefore, 
+        \[\left( A_1 \cup A_2 \cup ... \cup A_n \right)^c = A_1^c \cap A_2^c \cap ... \cap A_n^c \]
+        for any integer \(n \ge 2\).
+    \end{proof}
+
+    Similarly, for the second case, we have 
+    \[\left( A_1 \cap A_2 \cap ... \cap A_n \right)^c = A_1^c \cup A_2^c \cup ... \cup A_n^c.\]
+    \begin{proof}
+        First, we use \cref{def:de-morgans-sets} (DeMorgan's Law for Sets)
+        as the base case \(n=2\),
+        \(\left( A_1 \cap A_2 \right)^c = A_1^c \cup A_2^c.\)
+
+        Then, as our inductive hypothesis, we assume that 
+        \[ \left( \bigcap_{i=1}^{n} A_i \right)^c = \bigcup_{i=1}^{n} A_i^c, \text{ for } n \le k.\]
+
+        Then, we see that for \(n+1\), 
+        \begin{align*}
+            \left( \bigcap_{i=1}^{n+1} A_i \right)^c &= \left( \bigcap_{i=1}^{n} A_i \cap A_{n+1} \right)^c \\
+            \left( \bigcap_{i=1}^{n+1} A_i \right)^c &= \left( \bigcap_{i=1}^{n} A_i \right)^c \cup A_{n+1}^c .\\
+        \end{align*}
+
+        We can use our inductive hypothesis to substitute 
+        \(\left( \bigcap_{i=1}^{n} A_i \right)^c = \bigcup_{i=1}^{n} A_i^c\)
+        to get,
+        \begin{align*}
+            \left( \bigcap_{i=1}^{n+1} A_i \right)^c &= \bigcup_{i=1}^{n} A_i^c \cup A_{n+1}^c .\\
+            &= A_1^c \cup A_2^c \cup ... \cup A_n^c \cup A_{n+1}^c .\\
+        \end{align*}
+
+        Therefore, 
+        \[\left( A_1 \cap A_2 \cap ... \cap A_n \right)^c = A_1^c \cup A_2^c \cup ... \cup A_n^c \]
+        for any integer \(n \ge 2\).
+    \end{proof}
+\end{example}
 
 \begin{proposition}
     Let \(F_n\) be the \(n\)-th Fibonacci number, where \(F_0 = F_1 = 1\)
