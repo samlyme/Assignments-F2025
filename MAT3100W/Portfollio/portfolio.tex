@@ -381,95 +381,98 @@
     fundamental rules of logic are taken for granted as \textbf{axioms}.
 \end{definition}
 
-Prove \cref{prop:modular-arithmetic1}.
-\begin{proof}
-    Assume that \(a \equiv b \pmod m \). This means that \(m \mid (a - b)\).
-    Thus, \(a - b = k m \) for some \(k \in \mathbb{Z}\).
+\begin{example}
+    \Cref{prop:modular-arithmetic1} can be proven directly from definitions.
+    \begin{proof}
+        Assume that \(a \equiv b \pmod m \). This means that \(m \mid (a - b)\).
+        Thus, \(a - b = k m \) for some \(k \in \mathbb{Z}\).
 
-    If we multiply both sides by \(-1\), we get \(b - a = -km\). 
-    
-    Thus, by definition, \(m \mid (b - a)\) and \(b \equiv a \pmod m\).
-\end{proof}
+        If we multiply both sides by \(-1\), we get \(b - a = -km\). 
+        
+        Thus, by definition, \(m \mid (b - a)\) and \(b \equiv a \pmod m\).
+    \end{proof}
 
-\todo[inline, color=red!50]{Feedback requested. [How is this formatting? Does this count as 3 proofs?]}
-Using the properties of modular arithmetic in  \cref{def:modular-arithmetic},
-prove \cref{prop:modular-arithmetic2}
+    \todo[inline, color=red!50]{Feedback requested. [How is this formatting? Does this count as 3 proofs?]}
+    Using the properties of modular arithmetic in  \cref{def:modular-arithmetic},
+    prove \cref{prop:modular-arithmetic2}
 
-Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
-\begin{enumerate}
-    \item {
-        \(a + b \equiv a' + b' \pmod{m}\).
-
-        \begin{proof}
-            We begin with by defining \(a \equiv a' \pmod{m}\) as \(m \mid (a - a')\).
-            Similarly, \(m \mid (b - b')\).
-
-            Following from these definitions, we write:
-            \begin{equation} \label{eq:1}
-                a - a' = m \times k_1
-            \end{equation}
-            \begin{equation} \label{eq:2}
-                b - b' = m \times k_2
-            \end{equation}
-
-            We can add equations \cref{eq:1} and \cref{eq:2} together to get 
-            \(a + b - a' - b' = m \times k_1 + m \times k_2\).
-
-            With some factoring, we get \((a + b) - (a' + b') = m (k_1 + k_2)\).
-
-            By definition, we find that \(m \mid (a + b) - (a' + b')\), and thus
+    Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
+    \begin{enumerate}
+        \item {
             \(a + b \equiv a' + b' \pmod{m}\).
-        \end{proof}
-    }
 
-    \item {
-        \(a - b \equiv a' - b' \pmod{m}\).
+            \begin{proof}
+                We begin with by defining \(a \equiv a' \pmod{m}\) as \(m \mid (a - a')\).
+                Similarly, \(m \mid (b - b')\).
 
-        \begin{proof}
-            Following from Proof 1, we can instead subtract equation \cref{eq:1}
-            and \cref{eq:2} to get 
-            \\ \(a - b - a' + b' = m \times k_1 - m \times k_2\).
+                Following from these definitions, we write:
+                \begin{equation} \label{eq:1}
+                    a - a' = m \times k_1
+                \end{equation}
+                \begin{equation} \label{eq:2}
+                    b - b' = m \times k_2
+                \end{equation}
 
-            With some factoring, we get \((a-b) - (a'-b') = m(k_1 - k_2)\).
+                We can add equations \cref{eq:1} and \cref{eq:2} together to get 
+                \(a + b - a' - b' = m \times k_1 + m \times k_2\).
 
-            By definition, we find that \(m \mid (a - b) - (a' - b')\), and thus
+                With some factoring, we get \((a + b) - (a' + b') = m (k_1 + k_2)\).
+
+                By definition, we find that \(m \mid (a + b) - (a' + b')\), and thus
+                \(a + b \equiv a' + b' \pmod{m}\).
+            \end{proof}
+        }
+
+        \item {
             \(a - b \equiv a' - b' \pmod{m}\).
-        \end{proof}
-    }
 
-    \item {
-        \(a \times b \equiv a' \times b' \pmod{m}\).
+            \begin{proof}
+                Following from Proof 1, we can instead subtract equation \cref{eq:1}
+                and \cref{eq:2} to get 
+                \\ \(a - b - a' + b' = m \times k_1 - m \times k_2\).
 
-        \begin{proof}
-            Following from equation \cref{eq:1}, we get 
-            \begin{equation} \label{eq:3}
-                a = a' + m \times k_1.
-            \end{equation}
-            Similarly, from equation \cref{eq:2}, we  get 
-            \begin{equation} \label{eq:4}
-                b = b' + m \times k_2.
-            \end{equation}
+                With some factoring, we get \((a-b) - (a'-b') = m(k_1 - k_2)\).
 
-            By multiplying equations \cref{eq:3} and \cref{eq:4}, we get 
-            \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
+                By definition, we find that \(m \mid (a - b) - (a' - b')\), and thus
+                \(a - b \equiv a' - b' \pmod{m}\).
+            \end{proof}
+        }
 
-            \textit{From now on, I will omit the \(\times\) symbol.}
+        \item {
+            \(a \times b \equiv a' \times b' \pmod{m}\).
 
-            By distributing, we get 
-            \[ab = a'b' + a'mk_2 + b'mk_1 + m^2k_1k_2.\]
-            
-            We can factor out \(m\) to find 
-            \[ab = a'b' + m(a'k_2 + b'k_1 + mk_1k_2).\]
+            \begin{proof}
+                Following from equation \cref{eq:1}, we get 
+                \begin{equation} \label{eq:3}
+                    a = a' + m \times k_1.
+                \end{equation}
+                Similarly, from equation \cref{eq:2}, we  get 
+                \begin{equation} \label{eq:4}
+                    b = b' + m \times k_2.
+                \end{equation}
 
-            We can subtract \(a'b'\) from both sides to find 
-            \[ab - a'b' = m(a'k_2 + b'k_1 + mk_1k_2).\]
+                By multiplying equations \cref{eq:3} and \cref{eq:4}, we get 
+                \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
 
-            By definition, we see that \(m \mid (ab - a'b')\), and, by extension, 
-            \(ab \equiv a'b' \pmod{m}\).
+                \textit{From now on, I will omit the \(\times\) symbol.}
+
+                By distributing, we get 
+                \[ab = a'b' + a'mk_2 + b'mk_1 + m^2k_1k_2.\]
                 
-        \end{proof}
-    }
+                We can factor out \(m\) to find 
+                \[ab = a'b' + m(a'k_2 + b'k_1 + mk_1k_2).\]
+
+                We can subtract \(a'b'\) from both sides to find 
+                \[ab - a'b' = m(a'k_2 + b'k_1 + mk_1k_2).\]
+
+                By definition, we see that \(m \mid (ab - a'b')\), and, by extension, 
+                \(ab \equiv a'b' \pmod{m}\).
+                    
+            \end{proof}
+        }
 \end{enumerate}
+    
+\end{example}
 
 \subsection{Transformation of conditionals}
 
