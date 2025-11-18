@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{mathtools, amsfonts, amsthm}
+\usepackage{mathtools, amsfonts, amsthm, hyperref}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -21,16 +21,18 @@
 
 \section{Mathematical concepts}
 
-\subsection{Logical Statements}
+\subsection{Logic, truth tables, and DeMorgan's laws}
+
+\subsubsection{Logical Statements}
 \begin{definition}
     A logical statement is a statement that can either be \textbf{true} or \textbf{false}. 
     Logical statements must be unambiguous, meaning all ratioal agents with access 
     to the same information will come to the same conclusion. 
 \end{definition}
 
-\begin{proposition}
+\begin{example}
     ``The sun rose today.'' is a \textbf{true} logical statement.
-\end{proposition}
+\end{example}
 
 \begin{proof}
     We begin by observing that the we can currently see the sun in the sky and 
@@ -41,11 +43,210 @@
     Thus the sun must have risen today.
 \end{proof}
 
+\subsubsection{Truth Tables}
+\begin{definition}
+    Certain logical statements' \textbf{truth value} depends on the truth of 
+    other statements. For example, ``the sun rose today \textbf{and} it rained 
+    today'' requires both statements to be true in order for the overall statements 
+    to be true. If the sun rose but it didn't rain, or if the sun hasn't risen 
+    but it is raining, the overall statement is false. Thus, to visualize this 
+    relationship, it is useful to have a table to lay out the possibilities. 
+\end{definition}
+
+\begin{example}
+    \(A = \) the sun rose today, \(B = \) it rained today.
+    \[
+        \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & $A \land B$ \\
+        \hline
+        T & T & T \\
+        T & F & F \\
+        F & T & F \\
+        F & F & F \\
+        \hline
+        \end{tabular}
+    \]
+\end{example}
+
+\subsubsection{DeMorgan's Laws}
+\begin{definition}
+    Logical statements and their combinations have their own form of algebra.  One of the fundamental rules are DeMorgan's Laws, which state how to find the complements of conjunctions and disjunctions.
+    \emph{I prefer to use \(\neg\) for instead of \(\sim\). }
+
+    DeMorgan's Laws:
+    \[ \neg(A \land B) = \neg A \lor \neg B\]
+    \[ \neg(A \lor B) = \neg A \land \neg B\]
+\end{definition}
+
+\begin{proof}
+    Refer to direct proofs. 
+\end{proof}
+
+\subsection{Sets}
+
+\begin{definition}
+    Set: An unordered collection of unique elements. 
+\end{definition}
+
+\subsubsection{Unions, intersections, complements, and set differences}
+
+\begin{definition}
+    Union: the union of two sets \(A\), \(B\) is the set that contain elements that are 
+    in \(A\), or in \(B\), or both. 
+    \[A \cup B = \{x \mid x \in A \lor x \in B \}.\]
+\end{definition}
+
+\begin{definition}
+    Intersection: the intersection of two sets \(A\), \(B\) is the set that contains 
+    elements that are in both \(A\) and \(B\) at the same time.
+    \[A \cap B = \{x \mid x \in A \land x \in B\}.\]
+\end{definition}
+
+\begin{definition}
+    Difference: the set difference of two sets \(A\), \(B\) is the set that contains 
+    all elements of \(A\) that are not in \(B\). This operation is not commutative.`'
+    \[A \setminus B = \{x \mid x\in A \land x \not\in B\}.\]
+\end{definition}
+
+\begin{definition}
+    Complement: the complement of a set \(A\) is the set of all elements that are 
+    not in \(A\). For the complements of a set to be defined, it must be a subset 
+    of the unversal set \(\mathcal{U}\). In other words, it is the set difference
+    between \(\mathcal{U }\) and \(A\).
+    \[A^c = \mathcal{U} \setminus A.\]
+\end{definition}
+
+\subsubsection{Venn diagrams}
+
+\begin{definition}
+    Venn diagrams: a visual aid for understanding sets of objects and their 
+    relationships.
+\end{definition}
+
+\subsection{Numbers and number systems}
+
+\begin{definition}
+    Number: values that symbolize quantities. 
+\end{definition}
+
+\begin{definition}
+    Number system: way of representing numbers. Some are more sophisticated than 
+    others.
+\end{definition}
+
+\subsubsection{Parity, divisibility, and modular arithmetic}
+
+\begin{definition}
+    Divisibility: a number \(n \in \mathbb{Z}\) is divisible by another number 
+    \(m\) if and only if \(n = k \times m\) for some integer \(k\). 
+\end{definition}
+
+\begin{definition}
+    Parity: the property of a number being even or odd. The number is even if it
+    is divisible by two, and odd otherwise. 
+\end{definition}
+
+\label{def:modular-arithmetic}
+\begin{definition}
+    Modular arithmetic: a number system that groups numbers into equivalence 
+    classes based on their remainder when divided by a specific integer. 
+
+    More formally, for integers \(n \), \(r \), and \(m \), we say \(n \) is 
+    \textbf{congruent} to \(r \) modulo \(m \) if \((n-r)\) is divisible by \(m\).
+    \[n \equiv r \pmod{m} \Leftrightarrow m \mid (n - r)\]
+
+    For example, \(5 \equiv 11 \pmod3\) since they both have a remainder 2 when 
+    divided by 3, and because \(11 - 5 = 6\) is divisible by 3.
+
+
+    Standard arithmetic operations \(+, -, \text{and } \times \) are well-defined
+    under modular arithmetic. However, \(\div\) is not always well defined. These 
+    operations work the same way as they do in standard arithmetic.
+\end{definition}
+
+
+\subsubsection{Rational and irrational numbers}
+
+\begin{definition}
+    Rational numbers \(\mathbb{Q}\): the set of numbers that can be expressed 
+    as a ratio of two integers.
+\end{definition}
+
+\begin{definition}
+    Irrational numbers: the set of numbers that can't be expressed as a ratio 
+    of two integers. 
+\end{definition}
+
+\subsubsection{Real numbers, absolute value, and inequalities}
+
+\begin{definition}
+    Real number \(\mathbb{R}\): the set of all numbers on our number line.
+\end{definition}
+
+\subsubsection{Combinatorics: combinations, permutations, and factorials.}
+
+\begin{definition}
+    Combinations: the cardinality of the set of all subsets of a specific cardinality.
+\end{definition}
+
+\begin{definition}
+    Permutations: the cardinality of the set of all orderings of a specific length.
+\end{definition}
+
+\begin{definition}
+    Factorial: the product of natural numbers before it down to zero.
+    \[5! = 5 \times 4 \times 3 \times 2 \times 1 .\]
+\end{definition}
+
+\subsubsection{Countable sets}
+\begin{definition}
+    Countable set: a set that is either finite, or that has a bijection to the 
+    natural numbers. A set is countably infinite if it has a bijection to the 
+    natural numbers.
+\end{definition}
+\subsubsection{Uncountable sets}
+\begin{definition}
+    Uncountable set: a set that is infinite and there does not exists a bijection 
+    from it to the natural numbers.
+\end{definition}
+
+\subsection{Relations and functions}
+
+\subsubsection{Relations and equivalence relations}
+
+\begin{definition}
+    Relation \(R\): a set of ordered pairs that represents if a two elemeent \(a, b \in S\) 
+    are related. \(a \text{and} b\) are related if and only if \((a,b) \in R\).
+\end{definition}
+
+\begin{definition}
+    Equivalence relations: a special type of relation on a set that satisfies 
+    the properties of being symmetric, reflexive, and transitive.
+\end{definition}
+
+\subsubsection{Functions}
+
+\begin{definition}
+    Function: a mapping from a set called the domain to elemeents in a set called 
+    the codomain. 
+\end{definition}
+
+
+\subsubsection{Injections (one-to-one), surjections (onto), and bijections}
+
 \section{Proof techniques}
 
 \subsection{Direct Proofs}
-Suppose \(a \equiv a' \pmod{m}\) and \(b \equiv b' \pmod{m}\). Prove the
-following:
+\begin{definition}
+    Direct proof: using fundamental rules of logic to prove a statement.
+\end{definition}
+
+
+
+Using the properties of modular arithmetic \ref{def:modular-arithmetic},
+suppose \(a \equiv a' \pmod{m}\) and \(b \equiv b' \pmod{m}\). Prove the
+following: 
 
 \begin{enumerate}
     \item {
@@ -122,7 +323,49 @@ following:
     }
 \end{enumerate}
 
+\subsection{Transformation of conditionals}
+
+\begin{definition}
+    Transformation of conditionals: using rules of conditional logic to prove 
+    conditional statements. 
+\end{definition}
+
+\subsubsection{Inverse statements}
+
+\subsubsection{Converse statements}
+
+\subsubsection{Contrapositive proofs}
+
+\subsubsection{Bidirectional ("if and only if" proofs)}
+
+\subsection{Quantifiers}
+
+\begin{definition}
+    Quantifier: a logical expression that denotes whether a statement is true 
+    for all cases or for specific cases. 
+\end{definition}
+
+\subsubsection{Universal quantifiers}
+
+\subsubsection{Existential quantifiers}
+
+\subsubsection{Multiply quantified statements}
+
+\subsection{Existence and uniqueness proofs}
+
+\begin{definition}
+    Existence and uniqueness proof: a proof that results in us being sure that 
+    an element exists with a given property, and that it is the only element that 
+    exhibits such property. 
+\end{definition}
+
 \subsection{Proof by Induction}
+
+\begin{definition}
+    Proof by Induction: proof technique used to prove a statement is true for  
+    a countably infinite set of discrete elements. 
+\end{definition}
+
 As an example of Proof by Induction, we will prove the following.
 
 \begin{proposition}
@@ -251,6 +494,14 @@ disks, you can solve the puzzle in moves.
 
     Thus, \(f(n) = 2^n - 1\).
 \end{proof}
+
+\subsection{Proof by Contradiction}
+
+\begin{definition}
+    Proof by contradiction: proof technique that assumes the opposite of 
+    our proposition, then showing that this leads to an absurd conclusion,
+    ie. a contradiction. Used as a ``last resort'' proof technique. 
+\end{definition}
 
 \section{Final project}
 
