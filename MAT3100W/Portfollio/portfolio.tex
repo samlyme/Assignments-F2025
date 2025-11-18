@@ -710,6 +710,35 @@ Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
 \end{definition}
 
 \begin{example}
+    \Cref{prop:sqrt2-irrational} can be proven by contradiction.
+
+    We procede by contradiction by assuing that \(\sqrt{2} \in \mathbb{Q}\).
+    So, we can write
+    \[\sqrt{2} = \frac{a }{b }\]
+    for \(a, b \in \mathbb{N}\), and such that \(\frac{a}{b}\) is in lowest form. 
+
+    Then, with algebraic manipulation, we see 
+    \begin{align*}
+        2 = \frac{a^2}{b^2}.
+    \end{align*}
+
+    Thus, we get \(a^2 = 2b^2\) and \(b^2 = a^2/2\). So, \(a^2\) is even, and 
+    by extension, \(a\) is even. Since \(a\) is even, we write \(a = 2m\) for 
+    \(m \in \mathbb{Z}\). Thus,
+    \begin{align*}
+        b^2 &= \frac{(2m)^2}{2}, \\
+        b^2 &= \frac{4m^2}{2}, \\
+        b^2 &= 2m^2,
+    \end{align*}
+    showing that \(b^2\) must also be even.
+
+    This is a contradiction because we assumed that \(a/b\) was in lowest
+    terms, however, we have just found a way to factor out a common 2. This 
+    contradiction shows that our original proposition was be false. So, 
+    \(\sqrt{2}\) must be irrational.
+\end{example}
+
+\begin{example}
     \Cref{prop:R-uncountable} can be proven by contradiction. This is the famous 
     Cantor's diagonalization argument. 
 
