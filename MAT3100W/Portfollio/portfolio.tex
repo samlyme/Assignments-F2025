@@ -184,10 +184,8 @@
 \end{definition}
 
 \begin{proposition}
-    \todo{Prove this with direct proof.}
     \label{prop:modular-arithmetic1}
-    If \(a \equiv b \pmod m\), 
-    then \(b \equiv a \pmod m \).
+    If \(a \equiv b \pmod m\), then \(b \equiv a \pmod m \).
 \end{proposition}
 
 \begin{proposition}
@@ -308,6 +306,16 @@
     Direct proof: using fundamental rules of logic to prove a statement. The 
     fundamental rules of logic are taken for granted as \textbf{axioms}.
 \end{definition}
+
+Prove \cref{prop:modular-arithmetic1}.
+\begin{proof}
+    Assume that \(a \equiv b \pmod m \). This means that \(m \mid (a - b)\).
+    Thus, \(a - b = k m \) for some \(k \in \mathbb{Z}\).
+
+    If we multiply both sides by \(-1\), we get \(b - a = -km\). 
+    
+    Thus, by definition, \(m \mid (b - a)\) and \(b \equiv a \pmod m\).
+\end{proof}
 
 \todo[inline, color=red!50]{Feedback requested. [How is this formatting? Does this count as 3 proofs?]}
 Using the properties of modular arithmetic in  \cref{def:modular-arithmetic},
