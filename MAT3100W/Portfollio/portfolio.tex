@@ -370,6 +370,7 @@
 \end{lemma}
 
 \begin{theorem}
+    \label{prop:bijection-bidirectional}
     A bijection \(f: A \rightarrow B\) exists if and only if \(|A| = |B|\).
 \end{theorem}
 
@@ -488,6 +489,20 @@
 \subsubsection{Contrapositive proofs}
 
 \subsubsection{Bidirectional ("if and only if" proofs)}
+
+\begin{example}
+    \Cref{prop:bijection-bidirectional} can be proven bidirectionally by proving 
+    \cref{lemma:bijection-cardinality} and \cref{lemma:cardinality-bijection}.
+
+    \Cref{lemma:bijection-cardinality} can be proven directly. Assume that a 
+    bejection \(f: A \rightarrow B\) exists between sets \(A\) and \(B\). 
+
+    Since \(f\) is injective, distinct elements \(a_i \in A\) will always map to 
+    different elements \(b \in B\). In other words, \(f(a_1) \not= f(a_2)\).
+    Also, since \(f \) is surjective, for all elements \(b \in B\), there exists 
+    an element \(a \in A\) such that \(f(a) = b\).
+    Therefore, \(|A| = |B|\).
+\end{example}
 
 \subsection{Quantifiers}
 
