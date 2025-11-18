@@ -585,6 +585,7 @@
 \end{example}
 
 \subsection{Quantifiers}
+    \todo[inline, color=red!50]{Feedback requested. [Are these propositions good enough?]}
 
 \begin{definition}
     Quantifier: a logical expression that denotes whether a statement is true 
@@ -592,10 +593,95 @@
 \end{definition}
 
 \subsubsection{Universal quantifiers}
+\begin{definition}
+    For a statement with a universal quantifier to be true on set \(S\), the 
+    statement must be true for every single \(s \in S\). Universal statements 
+    can be disproven by one counterexample. 
+\end{definition}
+
+\begin{example}
+    A function \(f: D \rightarrow C\) is well defined on a domain \(D\) and codomain \(C\) 
+    if \(f(d) \in C\) for all \(d \in D\). Let \(f(x) = \sqrt{x}\). Is \(f: \mathbb{R} \rightarrow \mathbb{R}\) well defined? 
+    
+    \begin{proof}
+    We find 
+    that for \(x < 0\), \(f(x) \not\in \mathbb{R}\). We have not just found one 
+    counterexample, we have found an uncountably infinite number of counterexamples.
+    
+    So, \(f\) is not well defined.
+    \end{proof}
+\end{example}
 
 \subsubsection{Existential quantifiers}
+\begin{definition}
+    For a statement with an existential quantifier to be true on set \(S\), 
+    the statement must be true for at least one \(s \in S\). Existential statements 
+    can be proven by one example. 
+\end{definition}
+
+\begin{example}
+    There exists a real number \(r \in \mathbb{R}\), where \(\sqrt{r} \in \mathbb{Q}\). 
+
+    \begin{proof}
+        Let \(r=4\). \(\sqrt{4} = 2 = \frac{2}{1}\). Thus, \(\sqrt{2} \in \mathbb{Q}\).
+        So, there exists a real number \(r \in \mathbb{R}\), where \(\sqrt{r} \in \mathbb{Q}\). 
+    \end{proof}
+\end{example}
 
 \subsubsection{Multiply quantified statements}
+\begin{definition}
+    Multiply quantified statement: statements that include more than one 
+    quantifier. Typically, they go ``for all \(x\), there exists \(y\), such that \(z\).''
+    They can be reasoned about by using an ``adversarial'' game, where player 1
+    picks an \(x\) that makes it hard for player 2 to pick a \(y\) to satisfies \(z\). 
+    If player 1 can pick an \(x\) such that player 2 can't pick a valid \(y\) to 
+    satisfy \(z\), player 1 `wins' and the statement is false.
+
+    In another case, the statement can go ``there exists \(x\), for all \(y\), such that \(z\). ''
+    In this case, player 1 just needs to pick one value \(x\), such that for 
+    all values player 2 picks for \(y\), it satisfies \(z\). This makes the 
+    statement true.
+\end{definition}
+
+\begin{example}
+    For all pairs of real numbers \(x, y \in \mathbb{R}\) with \(x < y\), there 
+    exists a rational number \(r \in \mathbb{Q}\) such that \(x<r<y\).
+
+    \begin{proof}
+        We first define a useful interpretation of constructing rational 
+        numbers by dividing two integers \(r = n/d\). We are essentially taking 
+        \(n\) steps of length \(1/d\).
+
+        Thus, if we have a sufficiently small step size, there must be an 
+        integer number of steps for us to land on the range \(x < r < y\). 
+
+        We see that if we have a step size smaller than \(y - x\), we must 
+        always land within the range \(x < r < y\). 
+        
+        We can see this by imagining a worst case scenario where \(\frac{n-1}{d} = x\). 
+        Thus, because \(1/d < y - x\), 
+        \begin{align*}
+            x < \frac{n-1}{d} + \frac{1}{d} &< y\\
+            x < \frac{n}{d} &< y
+        \end{align*}
+
+        Similarly, we can see the other worst case scenario where \(\frac{n+1}{d} = y\). 
+        Thus, because \(1/d < y - x\), 
+        \begin{align*}
+            x < \frac{n+1}{d} - \frac{1}{d} &< y\\
+            x < \frac{n}{d} &< y
+        \end{align*}
+
+        In order to achieve a step size smaller than \(y - x\), we must 
+        satisfy the condition \(1/d < y - x\). In other words, \(d > \frac{1}{y-x}\).
+        Furthermore, increasing \(d\) will only decrease the step size. 
+
+        Thus, for all pairs of real numbers \(x, y \in \mathbb{R}\) with \(x < y\), 
+        we can find \(d \in \mathbb{Z}\) with \(d > \frac{1}{y-x}\). Then, there 
+        must exist an integer \(n\) where \(x < n/d < y\). 
+    \end{proof}
+
+\end{example}
 
 \subsection{Existence and uniqueness proofs}
 
