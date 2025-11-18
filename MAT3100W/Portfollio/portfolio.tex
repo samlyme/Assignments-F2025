@@ -370,7 +370,7 @@
 \end{lemma}
 
 \begin{theorem}
-    \label{prop:bijection-bidirectional}
+    \label{theorem:bijection-bidirectional}
     A bijection \(f: A \rightarrow B\) exists if and only if \(|A| = |B|\).
 \end{theorem}
 
@@ -488,37 +488,100 @@
     We first perform a direct proof.
 }
 
+\begin{example}
+    \Cref{lemma:cardinality-bijection} can be proven directly. 
+
+    Suppose you have two sets \(A\) and \(B\) such that \(|A| = |B| = n\). 
+    Thus, the elements of \(A\) can be enumerated by \(a_i\) for \(0 < i \le n\).
+    Similarly, the elements of \(B\) can be enumerated by \(b_i\) for \(0 < i \le n\). 
+
+    Thus, we can construct the function \(f: A \rightarrow B\) as \(f(a_i) = b_i\). 
+    \(f\) is injective because there does not exist a pair \(a_i, a_i'\) 
+    such that \(f(a_i) = f(a_i')\). \(f\) is also surjective becuase for every 
+    \(b_i \in B\), there exists \(a_i \in A\) such that \(f(a_i) = b_i\). 
+
+    Thus, by definition, \(f\) is a bijection. 
+\end{example}
+
 \subsubsection{Contrapositive proofs}
 \begin{definition}
     Contrapositive: given a statement \(P \Rightarrow Q\), the converse is \(\neg Q \Rightarrow \neg P\)
     The truth value of a statement is equivalent to its contrapositive.
 \end{definition}
+\begin{example}
+    \Cref{lemma:cardinality-bijection} can also be proven using its contrapositive. 
+    We find that this proof is slightly simplier. 
 
-\subsubsection{Inverse statements}
-\begin{definition}
-    Inverse: given a statement \(P \Rightarrow Q\), the inverse is \(\neg P \Rightarrow \neg Q\). 
-    The truth value of a statement's inverse is equivalent to its \textbf{converse}.
-\end{definition}
+    We proceed by contrapositive by saying if no bijection \(f: A \rightarrow B\)
+    exists, then \(|A| \not= |B|\).
+
+    Suppose two sets \(A\) and \(B\) such that there can not exist a bijection \(f\). 
+    Thus, for all \(f: A \rightarrow B\), \(f\) is either not injective or it is 
+    not surjective.
+
+    If \(f\) is not injective, then there exists \(a, a' \in A\) such that 
+    \(f(a) = f(a')\). Thus, \(|A| > |B|\). However, if \(f\) is not surjective, 
+    then there exists \(b \in B\) such that there does not exist \(a \in A\) where 
+    \(f(a) = b\). Thus, \(|B| > |A|\). 
+
+    Thus, \(|A| \not= |B|\). 
+\end{example}
+
 
 \subsubsection{Converse statements}
 \begin{definition}
     Converse: given a statement \(P \Rightarrow Q\), the converse is \(Q \Rightarrow P\)
     The truth value of a statement's converse is equivalent to its \textbf{inverse}.
 \end{definition}
-
-\subsubsection{Bidirectional ("if and only if" proofs)}
 \begin{example}
-    \Cref{prop:bijection-bidirectional} can be proven bidirectionally by proving 
-    \cref{lemma:bijection-cardinality} and \cref{lemma:cardinality-bijection}.
-
-    \Cref{lemma:bijection-cardinality} can be proven directly. Assume that a 
-    bejection \(f: A \rightarrow B\) exists between sets \(A\) and \(B\). 
+    \Cref{lemma:bijection-cardinality} is the converse of \cref{lemma:cardinality-bijection},
+    and can be proven directly.
 
     Since \(f\) is injective, distinct elements \(a_i \in A\) will always map to 
     different elements \(b \in B\). In other words, \(f(a_1) \not= f(a_2)\).
     Also, since \(f \) is surjective, for all elements \(b \in B\), there exists 
     an element \(a \in A\) such that \(f(a) = b\).
     Therefore, \(|A| = |B|\).
+\end{example}
+
+\subsubsection{Inverse statements}
+\begin{definition}
+    Inverse: given a statement \(P \Rightarrow Q\), the inverse is \(\neg P \Rightarrow \neg Q\). 
+    The truth value of a statement's inverse is equivalent to its \textbf{converse}.
+\end{definition}
+\begin{example}
+    We can prove \cref{lemma:bijection-cardinality} by proving the inverse 
+    of \cref{lemma:cardinality-bijection}. We will see that this is slightly 
+    simplier than the direct proof. 
+
+    Suppose we have two sets \(A\) and \(B\) such that \(|A| \not= |B|\). Thus, 
+    we have two cases: 
+    \begin{enumerate}
+        \item[\(|A| > |B|\):] {
+            Since there are more elements \(a \in A\) than there are \(b \in B\), 
+            there must be a pair of elements \(a, a' \in A\) such that \(f(a) = f(a')\). 
+
+            Thus, \(f\) is not injective.
+        }
+        \item[\(|A| < |B|\):] {
+            Since there are more elements \(b \in B\) than there are \(a \in A\), 
+            there must exist an element \(b \in B\) such that \(f(a) \not= b\) 
+            for all \(a \in A\).
+
+            Thus, \(f\) is not surjective.
+        }
+    \end{enumerate}
+
+    Therefore, \(f\) is not a bijection.
+\end{example}
+
+\subsubsection{Bidirectional ("if and only if" proofs)}
+\begin{example}
+    \Cref{theorem:bijection-bidirectional} can be proven bidirectionally by proving 
+    \cref{lemma:bijection-cardinality} and \cref{lemma:cardinality-bijection}.
+
+    We have proven both \cref{lemma:cardinality-bijection} and \cref{lemma:bijection-cardinality} above.
+    Thus, \cref{theorem:bijection-bidirectional} must be true.
 \end{example}
 
 \subsection{Quantifiers}
@@ -747,7 +810,7 @@
 \begin{example}
     \Cref{prop:sqrt2-irrational} can be proven by contradiction.
 
-    We procede by contradiction by assuing that \(\sqrt{2} \in \mathbb{Q}\).
+    We proceed by contradiction by assuing that \(\sqrt{2} \in \mathbb{Q}\).
     So, we can write
     \[\sqrt{2} = \frac{a }{b }\]
     for \(a, b \in \mathbb{N}\), and such that \(\frac{a}{b}\) is in lowest form. 
