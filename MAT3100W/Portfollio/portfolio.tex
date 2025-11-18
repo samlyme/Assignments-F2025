@@ -182,7 +182,6 @@
     Number system: way of representing numbers. Some are more sophisticated than 
     others.
 \end{definition}
-
 \subsubsection{Parity, divisibility, and modular arithmetic}
 
 \begin{definition}
@@ -243,6 +242,12 @@
     Irrational numbers: the set of numbers that can't be expressed as a ratio 
     of two integers. 
 \end{definition}
+
+\begin{proposition}
+    \label{prop:sqrt2-irrational}
+    \(\sqrt{2}\) is irrational. 
+\end{proposition}
+
 
 \subsubsection{Real numbers, absolute value, and inequalities}
 
@@ -348,6 +353,20 @@
     Bijection: a function \(f: A \rightarrow B \) is a bijection if and only if 
     it is both injective and surjective. 
 \end{definition}
+
+\begin{lemma}
+    \label{lemma:bijection-cardinality}
+    If a bijection \(f: A \rightarrow B\) exists, then \(|A| = |B|\).
+\end{lemma}
+
+\begin{lemma}
+    \label{lemma:cardinality-bijection}
+    If \(|A| = |B|\), then a bijection \(f: A \rightarrow B\) exists.
+\end{lemma}
+
+\begin{theorem}
+    A bijection \(f: A \rightarrow B\) exists if and only if \(|A| = |B|\).
+\end{theorem}
 
 \section{Proof techniques}
 
@@ -476,6 +495,8 @@ Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
 \subsubsection{Multiply quantified statements}
 
 \subsection{Existence and uniqueness proofs}
+
+\todo{Prove \cref{prop:Q-countable}}
 
 \begin{definition}
     Existence and uniqueness proof: a proof that results in us being sure that 
@@ -683,7 +704,41 @@ Given \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m \):
     tell you much abou why/how our proposition is true, just that it must be true. 
 \end{definition}
 
-\todo{Prove the uncountability of the reals.}
+\begin{example}
+    \Cref{prop:R-uncountable} can be proven by contradiction. This is the famous 
+    Cantor's diagonalization argument. 
+
+    First we assume that \(\mathbb{R}\) is countably infinite. In other words, 
+    \(|\mathbb{R}| = |\mathbb{N}|\), and that there exists a bijection between 
+    \(\mathbb{R}\) and \(\mathbb{N}\).
+
+    Thus, we can list out all the real numbers \(r_i \in \mathbb{R}\) for \(i \in \mathbb{N}\)
+    in a table as follows where the rows are distinct real numbers \(r_i\) and the 
+    columns are their decimal places:
+    \[
+\begin{array}{r|ccccccc}
+      & 10^{-1} & 10^{-2} & 10^{-3} & 10^{-4} & 10^{-5} & \cdots \\ \hline
+r_{1} & \mathbf{a_{11}} & a_{12} & a_{13} & a_{14} & a_{15} & \cdots & a_{1n}\\
+r_{2} & a_{21} & \mathbf{a_{22}} & a_{23} & a_{24} & a_{25} & \cdots & a_{2n}\\
+r_{3} & a_{31} & a_{32} & \mathbf{a_{33}} & a_{34} & a_{35} & \cdots & a_{3n}\\
+r_{4} & a_{41} & a_{42} & a_{43} & \mathbf{a_{44}} & a_{45} & \cdots & a_{4n}\\
+r_{5} & a_{51} & a_{52} & a_{53} & a_{54} & \mathbf{a_{55}} & \cdots & a_{5n}\\
+\vdots     & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+r_{n} & a_{n1} & a_{n2} & a_{n3} & a_{n4} & a_{n5} & \cdots & \mathbf{a_{nn}}\\
+\vdots     & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{array}
+\]
+
+    Then, we see the bolded diagonal. With this diagonal, for each \(a_{jj}\) for 
+    \(j \in \mathbb{N}\), we can construct an \textbf{entirely new} real number 
+    just be changing \(a_{jj}\). In the original arument, Cantor states to add 1 
+    if \(a_{jj} < 9\) and to subtract 1 if \(a_{jj} = 9\). However a more general 
+    way of saying this is to just pick a new integer \(0 \le a_{jj}' \le 9\)
+    that is not equal to \(a_{jj}\).
+
+    So, we have now constructed a new real number, contradicting our assumption. 
+    Thus, we see that \(\mathbb{R}\) must not be countably infinite.
+\end{example}
 
 \section{Final project}
 
