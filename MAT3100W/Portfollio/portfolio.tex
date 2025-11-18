@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{mathtools, amsfonts, amsthm, hyperref}
+\usepackage{cleveref}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -72,16 +73,17 @@
 \subsubsection{DeMorgan's Laws}
 \begin{definition}
     Logical statements and their combinations have their own form of algebra.  One of the fundamental rules are DeMorgan's Laws, which state how to find the complements of conjunctions and disjunctions.
-    \emph{I prefer to use \(\neg\) for instead of \(\sim\). }
-
-    DeMorgan's Laws:
-    \[ \neg(A \land B) = \neg A \lor \neg B\]
-    \[ \neg(A \lor B) = \neg A \land \neg B\]
 \end{definition}
 
-\begin{proof}
-    Refer to direct proofs. 
-\end{proof}
+\begin{theorem}
+    \label{prop:de-morgans-laws}
+    DeMorgan's Laws:
+    \begin{enumerate}
+        \item \( \neg(A \land B) = \neg A \lor \neg B\)
+        \item \( \neg(A \lor B) = \neg A \land \neg B\)
+    \end{enumerate}
+\end{theorem}
+
 
 \subsection{Sets}
 
@@ -117,11 +119,24 @@
     \[A^c = \mathcal{U} \setminus A.\]
 \end{definition}
 
+\begin{theorem}
+    DeMorgan's Laws for Sets:
+    \begin{enumerate}
+        \item \( (A \cap B)^c =  A^c \cup  B^c\)
+        \item \( (A \cup B)^c =  A^c \cap  B^c\)
+    \end{enumerate}
+
+\end{theorem}
+
 \subsubsection{Venn diagrams}
 
 \begin{definition}
     Venn diagrams: a visual aid for understanding sets of objects and their 
     relationships.
+
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{./images/set-theory-venn.png}
+    \end{center}
 \end{definition}
 
 \subsection{Numbers and number systems}
@@ -147,8 +162,8 @@
     is divisible by two, and odd otherwise. 
 \end{definition}
 
-\label{def:modular-arithmetic}
 \begin{definition}
+    \label{def:modular-arithmetic}
     Modular arithmetic: a number system that groups numbers into equivalence 
     classes based on their remainder when divided by a specific integer. 
 
@@ -159,11 +174,30 @@
     For example, \(5 \equiv 11 \pmod3\) since they both have a remainder 2 when 
     divided by 3, and because \(11 - 5 = 6\) is divisible by 3.
 
-
     Standard arithmetic operations \(+, -, \text{and } \times \) are well-defined
     under modular arithmetic. However, \(\div\) is not always well defined. These 
     operations work the same way as they do in standard arithmetic.
+
+    Notice that the parity of a number is equivalent to its divisability by 2, and 
+    a number's divisibility by \(m \in \mathbb{N} > 0\) is a equivalent to it being 
+    congruent to \(0\) modulo \(m\). 
 \end{definition}
+
+\begin{proposition}
+    \label{prop:modular-arithmetic1}
+    If \(a \equiv b \pmod m\), 
+    then \(b \equiv a \pmod m \).
+\end{proposition}
+
+\begin{proposition}
+    \label{prop:modular-arithmetic2}
+    If \(a \equiv a' \pmod m \) and \(b \equiv b' \pmod m\), then: 
+    \begin{enumerate}
+        \item \(a + b \equiv a' + b' \pmod m \)
+        \item \(a - b \equiv a' - b' \pmod m \)
+        \item \(a \times b \equiv a' \times b' \pmod m \)
+    \end{enumerate}
+\end{proposition}
 
 
 \subsubsection{Rational and irrational numbers}
@@ -244,7 +278,7 @@
 
 
 
-Using the properties of modular arithmetic \ref{def:modular-arithmetic},
+Using the properties of modular arithmetic in  \cref{def:modular-arithmetic},
 suppose \(a \equiv a' \pmod{m}\) and \(b \equiv b' \pmod{m}\). Prove the
 following: 
 
@@ -264,7 +298,7 @@ following:
                 b - b' = m \times k_2
             \end{equation}
 
-            We can add equations \ref{eq:1} and \ref{eq:2} together to get 
+            We can add equations \cref{eq:1} and \cref{eq:2} together to get 
             \(a + b - a' - b' = m \times k_1 + m \times k_2\).
 
             With some factoring, we get \((a + b) - (a' + b') = m (k_1 + k_2)\).
@@ -278,8 +312,8 @@ following:
         \(a - b \equiv a' - b' \pmod{m}\).
 
         \begin{proof}
-            Following from Proof 1, we can instead subtract equation \ref{eq:1}
-            and \ref{eq:2} to get 
+            Following from Proof 1, we can instead subtract equation \cref{eq:1}
+            and \cref{eq:2} to get 
             \\ \(a - b - a' + b' = m \times k_1 - m \times k_2\).
 
             With some factoring, we get \((a-b) - (a'-b') = m(k_1 - k_2)\).
@@ -293,16 +327,16 @@ following:
         \(a \times b \equiv a' \times b' \pmod{m}\).
 
         \begin{proof}
-            Following from equation \ref{eq:1}, we get 
+            Following from equation \cref{eq:1}, we get 
             \begin{equation} \label{eq:3}
                 a = a' + m \times k_1.
             \end{equation}
-            Similarly, from equation \ref{eq:2}, we  get 
+            Similarly, from equation \cref{eq:2}, we  get 
             \begin{equation} \label{eq:4}
                 b = b' + m \times k_2.
             \end{equation}
 
-            By multiplying equations \ref{eq:3} and \ref{eq:4}, we get 
+            By multiplying equations \cref{eq:3} and \cref{eq:4}, we get 
             \(a \times b = (a' + m\times k_1) (b' + m\times k_2)\).
 
             \textit{From now on, I will omit the \(\times\) symbol.}
