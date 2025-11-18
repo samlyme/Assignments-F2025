@@ -262,7 +262,7 @@
 \subsubsection{Relations and equivalence relations}
 
 \begin{definition}
-    Relation \(R\): a set of ordered pairs that represents if a two elemeent \(a, b \in S\) 
+    Relation \(R\): a set of ordered pairs that represents if a two element \(a, b \in S\) 
     are related. \(a \text{and} b\) are related if and only if \((a,b) \in R\).
 \end{definition}
 
@@ -274,12 +274,30 @@
 \subsubsection{Functions}
 
 \begin{definition}
-    Function: a mapping from a set called the domain to elemeents in a set called 
+    Function: a mapping from a set called the domain to elements in a set called 
     the codomain. 
 \end{definition}
 
 
 \subsubsection{Injections (one-to-one), surjections (onto), and bijections}
+
+\begin{definition}
+    Injection: a function \(f: A \rightarrow B\) is injective if and only if 
+    every distinct element \(a \in A\) maps to a distinct element \(f(a) \in B\).
+    In other words, there does not exist a pair of elements \(a, a' \in A\) where 
+    \(a \not= a'\) such that \(f(a) = f(a')\).
+\end{definition}
+
+\begin{definition}
+    Surjection: a function \(f: A \rightarrow B \) is surjective if and only if 
+    for every element \(b \in B \), there exists \(a \in A \) such that 
+    \(f(a) = b\).
+\end{definition}
+
+\begin{definition}
+    Bijection: a function \(f: A \rightarrow B \) is a bijection if and only if 
+    it is both injective and surjective. 
+\end{definition}
 
 \section{Proof techniques}
 
