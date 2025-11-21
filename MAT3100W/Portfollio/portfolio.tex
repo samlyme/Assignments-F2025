@@ -377,22 +377,30 @@
 \subsubsection{Injections (one-to-one), surjections (onto), and bijections}
 
 \begin{definition}
-    Injection: a function \(f: A \rightarrow B\) is injective if and only if 
-    every distinct element \(a \in A\) maps to a distinct element \(f(a) \in B\).
-    In other words, there does not exist a pair of elements \(a, a' \in A\) where 
-    \(a \not= a'\) such that \(f(a) = f(a')\).
+    Types of mappings:
+
+    \begin{enumerate}
+        \item[Injection:] {
+            a function \(f: A \rightarrow B\) is injective if and only if 
+            every distinct element \(a \in A\) maps to a distinct element \(f(a) \in B\).
+            In other words, there does not exist a pair of elements \(a, a' \in A\) where 
+            \(a \not= a'\) such that \(f(a) = f(a')\).
+        }
+
+        \item[Surjection:] {
+            a function \(f: A \rightarrow B \) is surjective if and only if 
+            for every element \(b \in B \), there exists \(a \in A \) such that 
+            \(f(a) = b\).
+        }
+
+
+        \item[Bijection:] {
+            a function \(f: A \rightarrow B \) is a bijection if and only if 
+            it is both injective and surjective. 
+        }
+    \end{enumerate}
 \end{definition}
 
-\begin{definition}
-    Surjection: a function \(f: A \rightarrow B \) is surjective if and only if 
-    for every element \(b \in B \), there exists \(a \in A \) such that 
-    \(f(a) = b\).
-\end{definition}
-
-\begin{definition}
-    Bijection: a function \(f: A \rightarrow B \) is a bijection if and only if 
-    it is both injective and surjective. 
-\end{definition}
 
 \begin{lemma}
     \label{lemma:bijection-cardinality}
@@ -428,7 +436,6 @@
         Thus, by definition, \(m \mid (b - a)\) and \(b \equiv a \pmod m\).
     \end{proof}
 
-    \todo[inline, color=red!50]{Feedback requested. [How is this formatting? Does this count as 3 proofs?]}
     Using the properties of modular arithmetic in  \cref{def:modular-arithmetic},
     prove \cref{prop:modular-arithmetic2}
 
@@ -524,42 +531,44 @@
 }
 
 \begin{example}
-    \Cref{lemma:cardinality-bijection} can be proven directly. 
+    \Cref{lemma:cardinality-bijection} can be proven directly.
 
-    Suppose you have two sets \(A\) and \(B\) such that \(|A| = |B| = n\). 
-    Thus, the elements of \(A\) can be enumerated by \(a_i\) for \(0 < i \le n\).
-    Similarly, the elements of \(B\) can be enumerated by \(b_i\) for \(0 < i \le n\). 
+    \begin{proof}
+        Suppose you have two sets \(A\) and \(B\) such that \(|A| = |B| = n\). 
+        Thus, the elements of \(A\) can be enumerated by \(a_i\) for \(0 < i \le n\).
+        Similarly, the elements of \(B\) can be enumerated by \(b_i\) for \(0 < i \le n\). 
 
-    Thus, we can construct the function \(f: A \rightarrow B\) as \(f(a_i) = b_i\). 
-    \(f\) is injective because there does not exist a pair \(a_i, a_i'\) 
-    such that \(f(a_i) = f(a_i')\). \(f\) is also surjective becuase for every 
-    \(b_i \in B\), there exists \(a_i \in A\) such that \(f(a_i) = b_i\). 
-
-    Thus, by definition, \(f\) is a bijection. 
+        So, we can construct the function \(f: A \rightarrow B\) as \(f(a_i) = b_i\). 
+        \(f\) is injective because there does not exist a pair \(a_i, a_i'\) 
+        such that \(f(a_i) = f(a_i')\). \(f\) is also surjective becuase for every 
+        \(b_i \in B\), there exists \(a_i \in A\) such that \(f(a_i) = b_i\). 
+        Therefore, by definition, \(f\) is a bijection. 
+    \end{proof}
 \end{example}
 
 \subsubsection{Contrapositive proofs}
 \begin{definition}
     Contrapositive: given a statement \(P \Rightarrow Q\), the converse is \(\neg Q \Rightarrow \neg P\)
-    The truth value of a statement is equivalent to its contrapositive.
+    The truth value of a statement is equivalent to its contrapositive. By proving 
+    the contrapositive, you also prove the original statement.
 \end{definition}
 \begin{example}
     \Cref{lemma:cardinality-bijection} can also be proven using its contrapositive. 
     We find that this proof is slightly simplier. 
 
-    We proceed by contrapositive by saying if no bijection \(f: A \rightarrow B\)
-    exists, then \(|A| \not= |B|\).
+    \begin{proof}
+        We proceed by contrapositive by saying if no bijection \(f: A \rightarrow B\)
+        exists, then \(|A| \not= |B|\).
 
-    Suppose two sets \(A\) and \(B\) such that there can not exist a bijection \(f\). 
-    Thus, for all \(f: A \rightarrow B\), \(f\) is either not injective or it is 
-    not surjective.
+        Suppose two sets \(A\) and \(B\) such that there can not exist a bijection \(f\). 
+        Thus, for any \(f: A \rightarrow B\), \(f\) is either not injective or it is 
+        not surjective.
 
-    If \(f\) is not injective, then there exists \(a, a' \in A\) such that 
-    \(f(a) = f(a')\). Thus, \(|A| > |B|\). However, if \(f\) is not surjective, 
-    then there exists \(b \in B\) such that there does not exist \(a \in A\) where 
-    \(f(a) = b\). Thus, \(|B| > |A|\). 
-
-    Thus, \(|A| \not= |B|\). 
+        If \(f\) is not injective, then there exists \(a, a' \in A\) such that 
+        \(f(a) = f(a')\). Thus, \(|A| > |B|\). However, if \(f\) is not surjective, 
+        then there exists \(b \in B\) such that there does not exist \(a \in A\) where 
+        \(f(a) = b\). Thus, \(|B| > |A|\). Therefore, in either case, \(|A| \not= |B|\).
+    \end{proof}
 \end{example}
 
 
@@ -572,11 +581,14 @@
     \Cref{lemma:bijection-cardinality} is the converse of \cref{lemma:cardinality-bijection},
     and can be proven directly.
 
-    Since \(f\) is injective, distinct elements \(a_i \in A\) will always map to 
-    different elements \(b \in B\). In other words, \(f(a_1) \not= f(a_2)\).
-    Also, since \(f \) is surjective, for all elements \(b \in B\), there exists 
-    an element \(a \in A\) such that \(f(a) = b\).
-    Therefore, \(|A| = |B|\).
+    \begin{proof}
+        Since \(f\) is injective, distinct elements \(a_i \in A\) will always map to 
+        different elements \(b \in B\). In other words, \(f(a_1) \not= f(a_2)\).
+        Also, since \(f \) is surjective, for all elements \(b \in B\), there exists 
+        an element \(a \in A\) such that \(f(a) = b\).
+        Therefore, \(|A| = |B|\).
+            
+    \end{proof}
 \end{example}
 
 \subsubsection{Inverse statements}
@@ -589,34 +601,44 @@
     of \cref{lemma:cardinality-bijection}. We will see that this is slightly 
     simplier than the direct proof. 
 
-    Suppose we have two sets \(A\) and \(B\) such that \(|A| \not= |B|\). Thus, 
-    we have two cases: 
-    \begin{enumerate}
-        \item[\(|A| > |B|\):] {
-            Since there are more elements \(a \in A\) than there are \(b \in B\), 
-            there must be a pair of elements \(a, a' \in A\) such that \(f(a) = f(a')\). 
+    \begin{proof}
+        Suppose we have two sets \(A\) and \(B\) such that \(|A| \not= |B|\). Thus, 
+        we have two cases: 
+        \begin{enumerate}
+            \item[\(|A| > |B|\):] {
+                Since there are more elements \(a \in A\) than there are \(b \in B\), 
+                there must be a pair of elements \(a, a' \in A\) such that \(f(a) = f(a')\). 
 
-            Thus, \(f\) is not injective.
-        }
-        \item[\(|A| < |B|\):] {
-            Since there are more elements \(b \in B\) than there are \(a \in A\), 
-            there must exist an element \(b \in B\) such that \(f(a) \not= b\) 
-            for all \(a \in A\).
+                Thus, \(f\) is not injective.
+            }
+            \item[\(|A| < |B|\):] {
+                Since there are more elements \(b \in B\) than there are \(a \in A\), 
+                there must exist an element \(b \in B\) such that \(f(a) \not= b\) 
+                for all \(a \in A\).
 
-            Thus, \(f\) is not surjective.
-        }
-    \end{enumerate}
+                Thus, \(f\) is not surjective.
+            }
+        \end{enumerate}
 
-    Therefore, \(f\) is not a bijection.
+        Therefore, \(f\) is not a bijection.
+    \end{proof}
 \end{example}
 
 \subsubsection{Bidirectional ("if and only if" proofs)}
+\begin{definition}
+    Bidirectional proof: A bidirectional proof involves proving both a conditional
+    statement and its converse to conclude that the \textbf{antecedent} and the 
+    \textbf{consequent} are logically equivalent.
+\end{definition}
+
 \begin{example}
     \Cref{theorem:bijection-bidirectional} can be proven bidirectionally by proving 
     \cref{lemma:bijection-cardinality} and \cref{lemma:cardinality-bijection}.
 
-    We have proven both \cref{lemma:cardinality-bijection} and \cref{lemma:bijection-cardinality} above.
-    Thus, \cref{theorem:bijection-bidirectional} must be true.
+    \begin{proof}
+        We have proven both \cref{lemma:cardinality-bijection} and \cref{lemma:bijection-cardinality} above.
+        Thus, \cref{theorem:bijection-bidirectional} must be true.
+    \end{proof}
 \end{example}
 
 \subsection{Quantifiers}
