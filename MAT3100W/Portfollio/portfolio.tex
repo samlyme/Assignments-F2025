@@ -309,7 +309,9 @@
 \end{definition}
 
 \begin{lemma}
-    The cartesian product of two countable sets will always be countable. 
+    \label{lemma:cartesian-product-countable}
+    Let \(A\) and \(B\) be countably infinite sets. The Cartesian product \(A \times B\)
+    is also countably infinite.
 \end{lemma}
 
 \begin{proposition}
@@ -745,8 +747,64 @@
     Existence and uniqueness proof: a proof that results in us being sure that 
     an element exists with a given property, and that it is the only element that 
     exhibits such property. 
+    In many ways, existence and uniqueness proofs are equivalent to constructing 
+    a bijection. 
 \end{definition}
 \todo{Find a good existence and uniqueness proof.}
+
+\begin{example}
+    \Cref{lemma:cartesian-product-countable} can be proven using an existence and 
+    uniqueness proof. 
+
+    \begin{proof}
+        Suppose sets \(A\) and \(B\) are countably infinite. By definition, 
+        there exists bijections \(f_A: \mathbb{N} \rightarrow A\) and 
+        \(f_B: \mathbb{N } \rightarrow B\). Thus, there must exist a bijection 
+        \(f_{A \times B } : \mathbb{N}^2 \rightarrow A \times B \).
+
+        Now, if we can prove a bijection \(f_{\mathbb{N}^2} \colon \mathbb{N} \rightarrow \mathbb{N}^2\),
+        we also prove there exists a bijection \(f: \mathbb{N} \rightarrow A \times B\) because 
+        of the transitivity of bijections. 
+
+        We proceed by arranging $\mathbb{N}\times\mathbb{N}$ in a grid with rows 
+        indexed by $i$ and columns indexed by $j$:
+        \[
+        \begin{array}{c|cccc}
+        & j=1 & j=2 & j=3 & j=4 \\
+        \hline
+        i=1 & (1,1) & (1,2) & (1,3) & (1,4)\\
+        i=2 & (2,1) & (2,2) & (2,3) & (2,4)\\
+        i=3 & (3,1) & (3,2) & (3,3) & (3,4)\\
+        i=4 & (4,1) & (4,2) & (4,3) & (4,4)
+        \end{array}
+        \]        
+
+        \[
+(1,1);\quad (1,2),(2,1);\quad (1,3),(2,2),(3,1);\quad (1,4),(2,3),(3,2),(4,1);\ \ldots
+        \]
+
+        This traversal enumerates all pairs \((i, j)\), and thus proves that 
+        there exists a bijection \(f: \mathbb{N } \rightarrow \mathbb{N }^2\).
+        In other words, \textbf{for any pair \((i, j)\) there exists a unique \(n \in \mathbb{N}\)
+        such that the \(n^{th}\) element in this traversal is the pair}.
+        Therefore, for any two countably infinite sets \(A\) and \(B\), their 
+        Cartesian product is also countably infinite.
+    \end{proof}
+\end{example}
+
+\begin{example}
+    \Cref{prop:Q-countable} is a natural extension of \cref{lemma:cartesian-product-countable}.
+
+    \begin{proof}
+        Since rational numbers in \(\mathbb{Q}\) are constructed as the ratio of 
+        two natural numbers \(a, b \in \mathbb{N}\), we can think of \(\mathbb{Q}\) 
+        as the cartesian product of \(\mathbb{N}\) and itself. We notice that certain 
+        pairs are equivalent. For example, \(2/4 = 1/2 \in \mathbb{Q}\), however 
+        they form distinct pairs in \(\mathbb{N}^2\). Thus, in our diagonal traversal, 
+        we simple skip the redundant elements. In other words \(\mathbb{Q} \subset \mathbb{N}^2\).
+        Therefore, \(\mathbb{Q}\) is countably infinite.
+    \end{proof}
+\end{example}
 
 \subsection{Proof by Induction}
 
