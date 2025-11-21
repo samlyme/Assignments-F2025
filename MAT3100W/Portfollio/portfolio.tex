@@ -2,6 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{mathtools, amsfonts, amsthm, hyperref}
 \usepackage{cleveref, todonotes}
+\usepackage{multicol}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -115,29 +116,35 @@
 \subsubsection{Unions, intersections, complements, and set differences}
 
 \begin{definition}
-    Union: the union of two sets \(A\), \(B\) is the set that contain elements that are 
-    in \(A\), or in \(B\), or both. 
-    \[A \cup B = \{x \mid x \in A \lor x \in B \}.\]
-\end{definition}
+    Set operations:
 
-\begin{definition}
-    Intersection: the intersection of two sets \(A\), \(B\) is the set that contains 
-    elements that are in both \(A\) and \(B\) at the same time.
-    \[A \cap B = \{x \mid x \in A \land x \in B\}.\]
-\end{definition}
+    \begin{enumerate}
+        \item [Union:] {
+            the union of two sets \(A\), \(B\) is the set that contain elements that are 
+            in \(A\), or in \(B\), or both. 
+            \[A \cup B = \{x \mid x \in A \lor x \in B \}.\]
+        }
 
-\begin{definition}
-    Difference: the set difference of two sets \(A\), \(B\) is the set that contains 
-    all elements of \(A\) that are not in \(B\). This operation is not commutative.`'
-    \[A \setminus B = \{x \mid x\in A \land x \not\in B\}.\]
-\end{definition}
+        \item [Intersection:] {
+            the intersection of two sets \(A\), \(B\) is the set that contains 
+            elements that are in both \(A\) and \(B\) at the same time.
+            \[A \cap B = \{x \mid x \in A \land x \in B\}.\]
+        }
 
-\begin{definition}
-    Complement: the complement of a set \(A\) is the set of all elements that are 
-    not in \(A\). For the complements of a set to be defined, it must be a subset 
-    of the unversal set \(\mathcal{U}\). In other words, it is the set difference
-    between \(\mathcal{U }\) and \(A\).
-    \[A^c = \mathcal{U} \setminus A.\]
+        \item[Difference:] {
+            the set difference of two sets \(A\), \(B\) is the set that contains 
+            all elements of \(A\) that are not in \(B\). This operation is not commutative.`'
+            \[A \setminus B = \{x \mid x\in A \land x \not\in B\}.\]
+        }
+
+        \item[Complement:] {
+            the complement of a set \(A\) is the set of all elements that are 
+            not in \(A\). For the complements of a set to be defined, it must be a subset 
+            of the unversal set \(\mathcal{U}\). In other words, it is the set difference
+            between \(\mathcal{U }\) and \(A\).
+            \[A^c = \mathcal{U} \setminus A.\]
+        }
+    \end{enumerate}
 \end{definition}
 
 \begin{theorem}
@@ -164,12 +171,40 @@
 \subsubsection{Venn diagrams}
 
 \begin{definition}
-    Venn diagrams: a visual aid for understanding sets of objects and their 
-    relationships.
-
+    Venn diagrams: a visual aid for understanding sets and set operations.
     \begin{center}
-        \includegraphics[width=0.6\textwidth]{./images/set-theory-venn.png}
+        \includegraphics[width=.3\textwidth]{./images/default-sets-venn.png}
     \end{center}
+
+    
+    \begin{multicols}{2}
+    \begin{enumerate}
+        \item [\(A \cup B\)] {
+            \begin{center}
+                \includegraphics[width=.3\textwidth]{./images/AuB-venn.png}
+            \end{center}
+        }
+
+        \item [\(A \cap B\)] {
+            \begin{center}
+                \includegraphics[width=.3\textwidth]{./images/AnU-venn.png}
+            \end{center}
+        }
+
+        \item[\(A \setminus B\)] {
+            \begin{center}
+                \includegraphics[width=.3\textwidth]{./images/AmB-venn.png}
+            \end{center}
+        }
+
+        \item[\(A^c\)] {
+            \begin{center}
+                \includegraphics[width=.3\textwidth]{./images/Ac-venn.png}
+            \end{center}
+        }
+    \end{enumerate}
+        
+    \end{multicols}
 \end{definition}
 
 \subsection{Numbers and number systems}
@@ -198,18 +233,15 @@
     \label{def:modular-arithmetic}
     Modular arithmetic: a number system that groups numbers into equivalence 
     classes based on their remainder when divided by a specific integer. 
-
     More formally, for integers \(n \), \(r \), and \(m \), we say \(n \) is 
     \textbf{congruent} to \(r \) modulo \(m \) if \((n-r)\) is divisible by \(m\).
     \[n \equiv r \pmod{m} \Leftrightarrow m \mid (n - r)\]
-
     For example, \(5 \equiv 11 \pmod3\) since they both have a remainder 2 when 
     divided by 3, and because \(11 - 5 = 6\) is divisible by 3.
 
     Standard arithmetic operations \(+, -, \text{and } \times \) are well-defined
     under modular arithmetic. However, \(\div\) is not always well defined. These 
     operations work the same way as they do in standard arithmetic.
-
     Notice that the parity of a number is equivalent to its divisability by 2, and 
     a number's divisibility by \(m \in \mathbb{N} > 0\) is a equivalent to it being 
     congruent to \(0\) modulo \(m\). 
@@ -306,19 +338,23 @@
 \end{definition}
 
 \begin{definition}
-    Reflexive: a relation \(R\) on set \(S\) is reflexive if and only if for 
-    every element \(s \in S\), \(sRs\).
-\end{definition}
+    Properties of Relations:
 
-\begin{definition}
-    Symmetric: a relation \(R\) on set \(S\) is symmetric if and only if for 
-    every pair of elements \(s_1, s_2 \in S\), \(s_1Rs_2\) implies \(s_2Rs_1\).
-\end{definition}
-
-\begin{definition}
-    Transitive: a relation \(R\) on set \(S\) is transitive if and only if for 
-    every trio of elements \(s_1, s_2, s_3 \in S\), \(s_1Rs_2\) and \(s_2R_s3\) 
-    implies \(s_1Rs_3\). 
+    \begin{enumerate}
+        \item[Reflexive:] {
+            a relation \(R\) on set \(S\) is reflexive if and only if for 
+            every element \(s \in S\), \(sRs\).
+        }
+        \item[Symmetric:] {
+            a relation \(R\) on set \(S\) is symmetric if and only if for 
+            every pair of elements \(s_1, s_2 \in S\), \(s_1Rs_2\) implies \(s_2Rs_1\).
+        }
+        \item[Transitive:] {
+            a relation \(R\) on set \(S\) is transitive if and only if for 
+            every trio of elements \(s_1, s_2, s_3 \in S\), \(s_1Rs_2\) and \(s_2R_s3\) 
+            implies \(s_1Rs_3\). 
+        }
+    \end{enumerate}
 \end{definition}
 
 \begin{definition}
