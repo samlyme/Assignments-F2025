@@ -19,7 +19,26 @@
 \maketitle
 
 \section{Introduction}
-(Leave this blank for now. Here's an outline of course topics for your reference.)
+In this paper, we will explore various fundamental mathematical ideas and concepts,
+as well as their proofs. Proofs of high-level mathematical concepts are difficult, 
+so various \textbf{proof techniques} will also be explored. We begin with the 
+logical \textbf{axioms}, providing us with a way to form \textbf{statements}. Armed 
+with just the our axioms, we find that new statements can be constructed. This is 
+as the \textbf{direct proof}, where we manipulate logical statements to find new 
+insights. Venturing further, we find \textbf{conditional statements}, and their 
+accompanied proof technique, the \textbf{transformation of conditionals}.
+We then explore \textbf{sets}, orderless groupings of arbitrary objects. Making 
+statements about objects within sets requires the use of \textbf{quantifiers}.
+Proofs of a countably infinite number of related statements are possible via a 
+technique known as \textbf{induction}.
+We also explore methods of defining infinities via \textbf{functions} and 
+\textbf{bijections}.
+We also see that our numbers are actually members of special sets. Through this 
+lense, we derive the basics of \textbf{number theory} and \textbf{modular arithmetic}.
+Lastly, when all hope seems lost in proving a statement, we may turn to the 
+\textbf{proof by contradiction} as our last resort. This technique can only tell us 
+\emph{if} a statement is true, but not \emph{why} or \emph{how}.
+
 
 \section{Mathematical concepts}
 
@@ -63,6 +82,13 @@
             the negation of a statement \(P\) denoted \(\neg P\) is true when 
             \(P\) is false. 
         }
+
+        \item[Implication:] {
+            statement \(P\) (the \textbf{antecedent}) implies statement \(Q\) 
+            (the \textbf{conclusion}) if \(Q\) is always true when \(P\) is true. 
+            This is denoted \(P \rightarrow Q\). Note that if \(P\) is false, 
+            the entire statement is always \(vacuously true\). 
+        }
     \end{enumerate}
 \end{definition}
 
@@ -77,16 +103,16 @@
 \end{definition}
 
 \begin{example}
-    \(A = \) the sun rose today, \(B = \) it rained today.
+    \(P \rightarrow Q\).
     \[
         \begin{tabular}{|c|c|c|}
         \hline
-        A & B & $A \land B$ \\
+        P & Q & $A \rightarrow B$ \\
         \hline
         T & T & T \\
         T & F & F \\
-        F & T & F \\
-        F & F & F \\
+        F & T & T \\
+        F & F & T \\
         \hline
         \end{tabular}
     \]
