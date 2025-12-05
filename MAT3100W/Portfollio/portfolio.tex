@@ -42,7 +42,16 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
 
 \section{Mathematical concepts}
 
+In this section, we will discuss \emph{concepts} that are foundational for constructing 
+and understanding mathematical proofs. Many of the concepts here build up to later 
+concepts, so reading in order is recommended, but not necessarily required. Most 
+concepts here will be proven later in \cref{section:proof}. These ideas form the 
+basis of higher level math.
+
 \subsection{Logic, truth tables, and DeMorgan's laws}
+
+The foundations of mathematical reasoning is formal logic. We can form \textbf{logical statements}
+that give us insights whatever we are reasoning about.
 
 \subsubsection{Logical Statements}
 \begin{definition}
@@ -55,6 +64,7 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
     ``The sun rose today.'' is a \textbf{true} logical statement.
 \end{example}
 
+
 \begin{proof}
     We begin by observing that the we can currently see the sun in the sky and 
     that we could not see the sun in the sky last night. If we can not see the 
@@ -63,6 +73,10 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
     it must have crossed the horizon at some point between last night and now. 
     Thus the sun must have risen today.
 \end{proof}
+
+We can then form larger statements by joining multiple statements with 
+\textbf{logical connectives}. The give us the ability to express and reason about 
+more complex statements.
 
 \begin{definition}
     Logical Connectives:
@@ -93,6 +107,12 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
 \end{definition}
 
 \subsubsection{Truth Tables}
+
+To visualize the truth of large and complex statements, we find it useful to 
+draw tables. Since the truth of large statements depends purely on its component 
+statements, a table can be drawn to visualize how the component statements effect 
+the overall statement.
+
 \begin{definition}
     Certain logical statements' \textbf{truth value} depends on the truth of 
     other statements. For example, ``the sun rose today \textbf{and} it rained 
@@ -119,6 +139,11 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
 \end{example}
 
 \subsubsection{DeMorgan's Laws}
+
+With logical statements, we can actually find algebraic rules that allow us to 
+find equivalent statements that may be more useful. One of the foundational 
+algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
+
 \begin{definition}
     Logical statements and their combinations have their own form of algebra.  One of the fundamental rules are DeMorgan's Laws, which state how to find the complements of conjunctions and disjunctions.
 \end{definition}
@@ -446,6 +471,7 @@ Lastly, when all hope seems lost in proving a statement, we may turn to the
 \end{theorem}
 
 \section{Proof techniques}
+\label{section:proof}
 
 \subsection{Direct Proofs}
 \begin{definition}
