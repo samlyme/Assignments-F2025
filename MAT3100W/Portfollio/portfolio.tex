@@ -160,11 +160,18 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
 
 \subsection{Sets}
 
+Another foundation of mathematics is the \textbf{set}, which gives us the ability 
+to reason about collections of objects. In many ways, mathematical concepts can be 
+reasoned about through sets.
+
 \begin{definition}
     Set: An unordered collection of unique elements. 
 \end{definition}
 
 \subsubsection{Unions, intersections, complements, and set differences}
+
+Sets on their own are useful, however we can perform operations on sets to create 
+new sets. These operations form a kind of ``set algebra''.
 
 \begin{definition}
     Set operations:
@@ -198,6 +205,9 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
     \end{enumerate}
 \end{definition}
 
+We can actually find that ``DeMorgan's Laws'' can be applied to sets, just as 
+they were applied to logical statements. 
+
 \begin{theorem}
     \label{def:de-morgans-sets}
     DeMorgan's Laws for Sets:
@@ -220,6 +230,9 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
 \end{proposition}
 
 \subsubsection{Venn diagrams}
+
+Similar to how we use truth tables to visualize the truth of logical 
+statements, we can use \textbf{Venn diagrams} to visualize sets.
 
 \begin{definition}
     Venn diagrams: a visual aid for understanding sets and set operations.
@@ -260,6 +273,10 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
 
 \subsection{Numbers and number systems}
 
+Now that we have defined sets, we can go on to define intuitive concepts like 
+\textbf{numbers} formally. We can actually put numbers into sets that exhibit 
+special properties.
+
 \begin{definition}
     Number: values that symbolize quantities. 
 \end{definition}
@@ -268,7 +285,15 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
     Number system: way of representing numbers. Some are more sophisticated than 
     others.
 \end{definition}
+
 \subsubsection{Parity, divisibility, and modular arithmetic}
+
+Within the set of natural numbers \(\mathbb{N }\) and integers \(\mathbb{Z }\), 
+we can create special subsets based on how they can or can't be divided. We call 
+this ruleset \textbf{modular arithmetic}.
+
+We have likely seen the notion of divisibility, before, however we find it useful 
+to redefine them formally.
 
 \begin{definition}
     Divisibility: a number \(n \in \mathbb{Z}\) is divisible by another number 
@@ -279,6 +304,8 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
     Parity: the property of a number being even or odd. The number is even if it
     is divisible by two, and odd otherwise. 
 \end{definition}
+
+To generalize the idea of parity to other divisors, we must define \textbf{modular arithmetic}.
 
 \begin{definition}
     \label{def:modular-arithmetic}
@@ -293,7 +320,7 @@ algebraic rules of formal logic are known as the \textbf{DeMorgan's Laws}.
     Standard arithmetic operations \(+, -, \text{and } \times \) are well-defined
     under modular arithmetic. However, \(\div\) is not always well defined. These 
     operations work the same way as they do in standard arithmetic.
-    Notice that the parity of a number is equivalent to its divisability by 2, and 
+    Notice that the parity of a number is equivalent to its divisible by 2, and 
     a number's divisibility by \(m \in \mathbb{N} > 0\) is a equivalent to it being 
     congruent to \(0\) modulo \(m\). 
 \end{definition}
