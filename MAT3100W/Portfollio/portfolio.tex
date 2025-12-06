@@ -545,6 +545,7 @@ to prove some propositions we stated.
 
 The most intuitive proof technique is the \textbf{direct proof}, which makes use 
 of the standard rules of logic. 
+
 \begin{definition}
     Direct proof: using fundamental rules of logic to prove a statement. The 
     fundamental rules of logic are taken for granted as \textbf{axioms}.
@@ -643,6 +644,14 @@ of the standard rules of logic.
 \end{example}
 
 \subsection{Transformation of conditionals}
+
+With conditional statements, we find that they have their own algebraic manipulation
+rules. Thus, we can transform conditionals into forms that are easier to prove. We find that 
+the \textbf{contrapositive} of a conditional is equivalent to the original statement. 
+Similarly, the \textbf{converse} and \textbf{inverse} are equivalent to each other.
+Proving both the original or contrapositive and the converse or inverse is known as 
+a \textbf{bidirectional} proof, and shows that the \textbf{antecedent} and the 
+\textbf{consequent} are logically equivalent.
 
 \begin{definition}
     Transformation of conditionals: using rules of conditional logic to prove 
@@ -768,12 +777,21 @@ of the standard rules of logic.
 
 \subsection{Quantifiers}
 
+In the world of logic over sets, ie. making logical statements about collections 
+of objects, we find it useful to either say that some amount of them exhibit a 
+certain property. Typically, we will either say all elements exhibit a property, 
+or that some element(s) exhibit a property. These statements can be made with the 
+use of \textbf{quantifiers}.
+
 \begin{definition}
     Quantifier: a logical expression that denotes whether a statement is true 
     for all cases or for specific cases. 
 \end{definition}
 
 \subsubsection{Universal quantifiers}
+
+To say something applies to all elements of a set, we use the \textbf{universal quantifier}.
+
 \begin{definition}
     For a statement with a universal quantifier to be true on set \(S\), the 
     statement must be true for every single \(s \in S\). Universal statements 
@@ -794,6 +812,9 @@ of the standard rules of logic.
 \end{example}
 
 \subsubsection{Existential quantifiers}
+
+To say something applies to at least one element of a set, we use the \textbf{existential quantifier}.
+
 \begin{definition}
     For a statement with an existential quantifier to be true on set \(S\), 
     the statement must be true for at least one \(s \in S\). Existential statements 
@@ -810,6 +831,9 @@ of the standard rules of logic.
 \end{example}
 
 \subsubsection{Multiply quantified statements}
+
+We can combine quantifiers to make precise statementsa about sets.
+
 \begin{definition}
     Multiply quantified statement: statements that include more than one 
     quantifier. Typically, they go ``for all \(x\), there exists \(y\), such that \(z\).''
@@ -865,6 +889,12 @@ of the standard rules of logic.
 \end{example}
 
 \subsection{Existence and uniqueness proofs}
+
+If we want to be even more precise than what is possible with quantifiers, we can 
+perform an \textbf{existence and uniqueness proof} where we prove that not only is 
+this property applied to an element of a set, that is also the only element of said set 
+with that property. 
+
 \begin{definition}
     Existence and uniqueness proof: a proof that results in us being sure that 
     an element exists with a given property, and that it is the only element that 
@@ -928,6 +958,10 @@ of the standard rules of logic.
 \end{example}
 
 \subsection{Proof by Induction}
+
+When we want to prove something about a very large set, and possibly a countably
+infinite set, we can use mathematical induction. Although it seems circular at first, 
+the logic does hold and this technique is fundamental to proving complex statements.
 
 \begin{definition}
     Proof by Induction: proof technique used to prove a statement is true for  
@@ -1112,6 +1146,11 @@ of the standard rules of logic.
 
 \subsection{Proof by Contradiction}
 
+Lastly, if we are at a loss, we can prove a statement by \emph{disproving its opposite}.
+If we assume the opposite of a statement, and run into a \textbf{contradiction} we 
+find that the original statement must be true! This is because a contradiction 
+is impossible in our world of math. 
+
 \begin{definition}
     Proof by contradiction: proof technique that assumes the opposite of 
     our proposition, then showing that this leads to an absurd conclusion,
@@ -1193,6 +1232,63 @@ r_{n} & a_{n1} & a_{n2} & a_{n3} & a_{n4} & a_{n5} & \cdots & \mathbf{a_{nn}}\\
 \end{example}
 
 \section{Final project}
+
+In our final project, we chose to explore thew idea of regular polytopes, a 
+generalization of regular polygons and polyhedra into higher dimensional spaces. 
+First, we define regular polytopes in 2D, aka. regular polygons, as polygons that 
+have equal side lengths and equal interior angles. We can prove that there are 
+actually an infinite number of regular polygons rather easily. finding that there 
+exists a way to construct a \(n\)-sided polygon for all \(n \in \mathbb{N}\). 
+
+\begin{proof}
+Let \(n \in \mathbb{N }\). We can pick \(n\) equidistant points on a circle and 
+connect them with lines to form the sides. Thus, we have a \(n\)-gon in 2D.
+\end{proof}
+
+However, this task is not possible in 3D. In 3D, we have to have sides that can 
+``fold'' together to form a convex shape. More formally, the interior angle times 
+the number of sides that meet at a vertex must be less than \(2 \pi\). Before proving 
+this statement, I would like to define some useful notation. We say a polyhedra 
+with \(p\)-gons as sides and \(q\) instances of these \(p\)-gons at each vertex 
+is \(\{p, q\}\). 
+
+\begin{proof}
+    First, we pick some arbitrary \(p, q \in \mathbb{N}\). The interior angle of 
+    \(\{ p \} \) is \(\frac{(p-2)\pi}{p}\). When we arange them around a point, 
+    the sum of the interior angles is \(q \times \frac{(p-2)\pi }{p} = q(1-2/p)\pi\). This value 
+    must be strictly less than \(2\pi\) for the polyhedra to be convex.
+
+    Thus, we get 
+    \[ q(1-\frac{2}{p})\pi < 2\pi\]
+    \[ 1 - \frac{2}{p} < \frac{2}{q}\]
+    \[ \frac{1}{p} + \frac{1}{q} < \frac{1}{2}.\]
+
+    Solving for this inequality, and finding only integer solutions where \(p, q > 2\),
+    we find the solutions \(\{3,3\},\ \{3,4\},\ \{4,3\},\ \{3,5\},\ \{5,3\}\).
+\end{proof}
+
+Notice that to construct a regular \(n\)-D polytope, each of its sides are \(n-1\)-D
+regular polytopes. We can see this by noticing that a cube has sides that are squares.
+This idea generalizes to higher dimensions. 
+
+\includegraphics[width=0.5\textwidth]{./images/polyhedra-2d-side.png}
+
+We can also visualize higher dimensional objects via projections and nets. 
+We can project 4D objects into 3D the same way we project the ``shadow'' of a 3D 
+object onto a 2D surface.
+
+\includegraphics[width=0.6\textwidth]{./images/projection-cube.png}
+
+Another way to visualize higher dimensional objects is via its net. We do this by
+``unrolling'' its sides.
+\includegraphics[width=0.8\textwidth]{images/net4d.png}
+
+To be very honest, this topic was pretty difficult for me to grasp. I tried my best,
+and I feel as though I got a solid foundation, there is still a lot for me to 
+learn in this area, and that I've barely scratched the surface. Although I `understand'
+the proofs for the basic theorems, I find it difficult to find an intuitive foothold 
+anywhere here. Nevertheless, this project has been extremely fun, and I feel as 
+though I at least have some idea of how to reason about this specific area of math.
 
 \section{Conclusion and reflection}
 
