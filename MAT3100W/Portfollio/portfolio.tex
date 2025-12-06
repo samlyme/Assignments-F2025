@@ -4,6 +4,9 @@
 \usepackage{cleveref, todonotes}
 \usepackage{multicol}
 
+\usepackage[style=numeric,backend=bibtex]{biblatex}
+\addbibresource{./references.bib}
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
@@ -1233,6 +1236,8 @@ r_{n} & a_{n1} & a_{n2} & a_{n3} & a_{n4} & a_{n5} & \cdots & \mathbf{a_{nn}}\\
 
 \section{Final project}
 
+The following notes are heavily based on the work \cite{coxeter_regular_polytopes}.
+
 In our final project, we chose to explore thew idea of regular polytopes, a 
 generalization of regular polygons and polyhedra into higher dimensional spaces. 
 First, we define regular polytopes in 2D, aka. regular polygons, as polygons that 
@@ -1251,6 +1256,7 @@ the number of sides that meet at a vertex must be less than \(2 \pi\). Before pr
 this statement, I would like to define some useful notation. We say a polyhedra 
 with \(p\)-gons as sides and \(q\) instances of these \(p\)-gons at each vertex 
 is \(\{p, q\}\). 
+
 
 \begin{proof}
     First, we pick some arbitrary \(p, q \in \mathbb{N}\). The interior angle of 
@@ -1379,4 +1385,7 @@ feel as though this course really opened my eyes to higher level math.
         \item Uncountability of the real numbers, $\mathbb{R}$
     \end{itemize}
 \end{itemize}
+
+\printbibliography
+
 \end{document}
